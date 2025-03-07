@@ -1,7 +1,10 @@
 { ... }:
 
 {
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  networking.hostName = "nixos"; # Define your hostname.
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  environment.systemPackages = with pkgs; [
+    networkmanagerapplet # gnome applet for interfacing with networkmanager
+  ];
 }

@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [ 
     libsecret
-    gnome-libsecret
     polkit
     polkit_gnome
   ];

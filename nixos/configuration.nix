@@ -17,7 +17,6 @@
   default-user.enable = true;
   default-user.username = "sebastian";
 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

@@ -3,5 +3,6 @@
 {
   imports = [
     # ...
+    ./default-user.nix
   ];
 }

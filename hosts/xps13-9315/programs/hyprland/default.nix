@@ -7,6 +7,8 @@
     waybar
     swww
     kitty
+    dunst
+    rofi
   ];
 
   programs.hyprland.enable = true;

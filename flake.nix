@@ -5,7 +5,7 @@
   inputs.zen-browser.url = "github:0xc000022070/zen-browser-flake";
   inputs.nixos-hardware.url = "github:Nixos/nixos-hardware/master";
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }@attrs: {
+  outputs = { self, nixpkgs, nixos-hardware, inputs, ... }@attrs: {
     nixosConfigurations.xps13-9315 = nixpkgs.lib.nixosSystem {
       inherit inputs;
       pkgs = import nixpkgs {

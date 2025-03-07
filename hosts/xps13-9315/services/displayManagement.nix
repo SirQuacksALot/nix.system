@@ -10,7 +10,7 @@
 
   xdg.portal = {
     enable = true;
-    extaPortals = [
+    extraPortals = [
       pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-hyprland

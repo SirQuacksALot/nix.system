@@ -7,6 +7,7 @@
 
   outputs = { self, nixpkgs, nixos-hardware, ... }@attrs: {
     nixosConfigurations.xps13-9315 = nixpkgs.lib.nixosSystem {
+      inherit inputs;
       pkgs = import nixpkgs {
         system = "x86_64-linux";
         config.allowUnfree = true;

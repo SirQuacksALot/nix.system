@@ -1,7 +1,11 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ libsecret ];
+  environment.systemPackages = with pkgs; [ 
+    libsecret
+    polkit
+    polkit_gnome
+  ];
 
   # use gnome as display backend
   services.xserver.enable = true;

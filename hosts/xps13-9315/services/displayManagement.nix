@@ -17,9 +17,11 @@
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  programs.seahorse.enable = true;
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.gdm.enableGnomeKeyring = true;
+  environment.systemPackages = [ pkgs.libsecret ]; # libsecret API
+  security.pam.services.gdm.enableGnomeKeyring = true; # load gnome-keyring at startup
+  environment.variables.XDG_RUNTIME_DIR = "/run/user/$UID"; # set the runtime directory
+  programs.seahorse.enable = true; # enable the graphical frontend for managing
 
 
   xdg.portal = {

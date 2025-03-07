@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./services
-    ./programs
+    ./hyprland
   ];
 }

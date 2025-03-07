@@ -12,6 +12,7 @@
   ];
 
   programs.hyprland.enable = true;
+  programs.hyprland.xwayland = true;
 
   environment.sessionVariables = rec {
     EDITOR = "vscode";

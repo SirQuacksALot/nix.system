@@ -7,7 +7,7 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../hosts/xps13-9315
+    ../hosts/xps13-9315
   ];
 
   # Set your time zone.

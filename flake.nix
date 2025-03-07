@@ -13,7 +13,7 @@
         config.allowUnfree = true;
       };
 
-      __module.args = { inherit zen-browser; };
+      specialArgs = { inherit zen-browser; };
 
       modules = [
         nixos-hardware.nixosModules.dell-xps-13-9315

@@ -8,11 +8,7 @@
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  environment.systemPackages = [ pkgs.libsecret ];
   services.gnome.gnome-keyring.enable = true;
-  programs.seahorse.enable = true;
-  security.pam.services.gdm.enableGnomeKeyring = true;
-  security.pam.services.gdm-password.enableGnomeKeyring = true;
 
   xdg.portal = {
     enable = true;

@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     waybar
     swww
+    kitty
   ];
 
   programs.hyprland.enable = true;

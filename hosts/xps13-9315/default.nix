@@ -5,6 +5,7 @@
     ./modules
     ./services
     ./programs
+    ./fonts
   ];
 
   users.users.sebastian.packages = with pkgs; [
@@ -13,7 +14,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    
+
   ];
 
 }

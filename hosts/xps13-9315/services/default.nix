@@ -4,6 +4,6 @@
   imports = [
     ./bootlaoder.nix
     ./networking.nix
-    ./shell.nis
+    ./remote.nis
   ];
 }

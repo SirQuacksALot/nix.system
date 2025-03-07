@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, system, ... }:
 
 {
   imports = [
@@ -6,4 +6,10 @@
     ./services
     ./programs
   ];
+
+  environment.systemPackages = with pkgs; [
+    vscode
+    inputs.zen-browser.packages."${system}".specific
+  ];
+
 }

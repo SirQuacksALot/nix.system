@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, zen-browser, ... }:
 
 {
   imports = [
@@ -9,6 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     vscode
+    zen-browser.packages."x86_64-linux".default
   ];
 
 }

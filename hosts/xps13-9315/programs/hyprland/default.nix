@@ -17,5 +17,6 @@
     EDITOR = "vscode";
     BROWSER = "zen";
     TERMINAL = "kitty";
+    NIXOS_OZONE_WL = "1"; # Optional, hint Electron apps to use Wayland:
   };
 }

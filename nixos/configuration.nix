@@ -13,17 +13,10 @@
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
+  # Define a user account. Default pw: 123.
   default-user.enable = true;
   default-user.username = "sebastian";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.sebastian = {
-  #  isNormalUser = true;
-  #  extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #  packages = with pkgs; [
-  #    tree
-  #  ];
-  #};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

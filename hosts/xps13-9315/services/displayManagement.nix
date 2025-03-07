@@ -7,9 +7,6 @@
     polkit_gnome
   ];
 
-  
-  environment.variables.XDG_RUNTIME_DIR = "/run/user/$UID";
-
   # use gnome as display backend
   services.xserver.enable = true;
   services.xserver.displayManager.defaultSession = "hyprland";

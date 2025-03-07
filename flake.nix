@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixos-hardware.url = "github:Nixos/nixos-hardware/master";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
-  }
+  };
 
   outputs = { self, nixpkgs, nixos-hardware, ... }@attrs: {
 

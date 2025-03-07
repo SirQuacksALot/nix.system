@@ -14,10 +14,6 @@
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.hyprland.enableGnomeKeyring = true;
-  security.polkit.enable = true; 
-
   xdg.portal = {
     enable = true;
     extraPortals = [

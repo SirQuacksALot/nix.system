@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pksg, ... }:
 
 {
   services.pipewire.enable = lib.mkForce false;

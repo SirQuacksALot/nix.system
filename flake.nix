@@ -6,7 +6,7 @@
   outputs = { self, nixpkgs }@attrs: {
     nixosConfigurations.xps13-9315 = nixpkgs.lib.nixosSystem {
       modules = [
-        ./hosts/xps13-9315/configuration.nix
+        ./nixos/configuration.nix
       ];
     };
   };

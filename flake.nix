@@ -1,13 +1,11 @@
 {
   description = "A very basic flake";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixos-hardware.url = "github:Nixos/nixos-hardware/master";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+  inputs.nixos-hardware.url = "github:Nixos/nixos-hardware/master";
+  inputs.zen-browser.url = "github:MarceColl/zen-browser-flake";
 
-  outputs = { self, nixpkgs, nixos-hardware, inputs, ... }@attrs: {
+  outputs = { self, nixpkgs, nixos-hardware, zen-browser, ... }@attrs: {
 
     nixosConfigurations.xps13-9315 = nixpkgs.lib.nixosSystem {
       pkgs = import nixpkgs {
@@ -15,7 +13,7 @@
         config.allowUnfree = true;
       };
 
-      __module.args = { inherit inputs; };
+      __module.args = { inherit zen-browser; };
 
       modules = [
         nixos-hardware.nixosModules.dell-xps-13-9315

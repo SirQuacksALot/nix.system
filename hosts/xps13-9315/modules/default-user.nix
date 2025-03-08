@@ -32,7 +32,7 @@ in
           src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/";
           file = "powerlevel10k.zsh-theme";
         }
-      ]
+      ];
     };
     
     # create user

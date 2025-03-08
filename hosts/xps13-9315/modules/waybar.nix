@@ -68,29 +68,19 @@ in
     ];
 
     # make config file
-    configFile = mkIf (cfg.settings != null){
-      source = if builtins.isPath cfg.settings || isStorePath cfg.settings then
-        cfg.settings
-      else 
-        pkgs.writeTextDir "~/.config/waybar/config" cfg.settings;
-      onChange = ''
-        ${pkgs.procps}/bin/pkill -u $USER -USR2 waybar || true
-      '';
-    };
+    configFile = if builtins.isPath cfg.settings || isStorePath cfg.settings then
+      cfg.settings
+    else 
+      pkgs.writeTextDir "~/.config/waybar/config" cfg.settings;
     
     # make style file
-    styleFile = mkIf (cfg.style != null){
-      source = if builtins.isPath cfg.style || isStorePath cfg.style then
-        cfg.style
-      else 
-        pkgs.writeTextDir "~/.config/waybar/style.css" cfg.style;
-      onChange = ''
-        ${pkgs.procps}/bin/pkill -u $USER -USR2 waybar || true
-      '';
-    };
+    configFile = if builtins.isPath cfg.style || isStorePath cfg.style then
+      cfg.style
+    else 
+      pkgs.writeTextDir "~/.config/waybar/style.css" cfg.style;
 
     # Make a system service
-    service = mkIf cfg.systemd.enable {
+    (mkIf cfg.systemd.enable {
       systemd.user.services.waybar = {
         Unit = {
           PartOf = [ cfg.systemd.target ];
@@ -99,7 +89,7 @@ in
           X-Restart-Triggers = optional (cfg.settings != null)
             "${configFile.source}"
             ++ optional (cfg.style != null)
-            "$styleFile.source}";
+            "${styleFile.source}";
         };
 
         Service = {
@@ -114,6 +104,6 @@ in
         Install.WantedBy =
           lib.optional (cfg.systemd.target != null) cfg.systemd.target;
       };
-    };
+    })
   };
 }

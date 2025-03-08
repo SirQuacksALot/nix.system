@@ -58,9 +58,9 @@ in
 
     runCommand = if cfg.configs.enable 
     then {
-      "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}";
+      "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}"
     } else {
-      "${cfg.package}/bin/waybar";
+      "${cfg.package}/bin/waybar"
     };
 
     # Define service

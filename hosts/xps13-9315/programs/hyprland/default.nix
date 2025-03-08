@@ -11,6 +11,9 @@
     rofi
   ];
 
+  waybar.enable = true;
+  waybar.systemd.enable = true;
+
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
 

@@ -63,7 +63,7 @@ in
         KillMode = "mixed";
       };
 
-      Install.wantedBy = [ "default.target" ];
+      wantedBy = [ "default.target" ];
     };
   };
 }

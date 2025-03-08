@@ -60,12 +60,9 @@ in
       cfg.package
     ];
 
-    runCommand = if cfg.configs.enable 
-    then {
-      "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}"
-    } else {
-      "${cfg.package}/bin/waybar"
-    };
+    (mkIf cfg.configs.enable {
+      runCommand = "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}";
+    })
 
     # Define service
     systemd.user.services.waybar = mkIf cfg.systemd.enable {

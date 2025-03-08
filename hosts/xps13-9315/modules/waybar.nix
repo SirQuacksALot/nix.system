@@ -102,6 +102,6 @@ in
         Install.WantedBy =
           lib.optional (cfg.systemd.target != null) cfg.systemd.target;
       };
-    }
+    };
   };
 }

@@ -49,7 +49,7 @@ in
     systemd.target = mkOption {
       type = nullOr str;
       default = config.wayland.systemd.target;
-      defaultText = literalExpression "config.wayland.systemd.target";
+      defaultText = literalExpression "hyprland-session.target";
     };
     
     # Enable to inspect obejcts - docs: https://developer.gnome.org/documentation/tools/inspector.html

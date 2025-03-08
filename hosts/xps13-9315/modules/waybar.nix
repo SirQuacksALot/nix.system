@@ -47,7 +47,7 @@ in
     runCommand = mkOption {
       type = str;
       default = "${cfg.package}/bin/waybar"
-    }
+    };
 
     # Enable System service
     systemd.enable = mkEnableOption "Waybar systemd integration";

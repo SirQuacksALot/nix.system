@@ -46,7 +46,7 @@ in
 
     runCommand = mkOption {
       type = str;
-      default = ""${cfg.package}/bin/waybar""
+      default = "${cfg.package}/bin/waybar"
     }
 
     # Enable System service

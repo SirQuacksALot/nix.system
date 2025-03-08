@@ -87,14 +87,12 @@ in
         ${pkgs.procps}/bin/pkill -u $USER -USR2 waybar || true
       '';
     };
+  };
 
     # Make a system service
     service = mkIf cfg.systemd.enable {
       systemd.user.services.waybar = {
         Unit = {
-          Description =
-            "Highly customizable Wayland bar for Sway and Wlroots based compositors.";
-          Documentation = "https://github.com/Alexays/Waybar/wiki";
           PartOf = [ cfg.systemd.target ];
           After = [ cfg.systemd.target ];
           ConditionEnvironment = "WAYLAND_DISPLAY";

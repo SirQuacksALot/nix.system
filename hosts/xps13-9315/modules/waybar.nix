@@ -14,7 +14,7 @@ let
   inherit (lib.modules) mkIf mkMerge;
 
   cfg = config.waybar;
-  runCommand.exec = "";
+  runCommand = "";
 in
 {
   #----------------------------------------------------------------
@@ -58,9 +58,9 @@ in
 
     runCommand = if cfg.configs.enable 
     then {
-      exec = "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}";
+      "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}";
     } else {
-      exec = "${cfg.package}/bin/waybar";
+      "${cfg.package}/bin/waybar";
     };
 
     # Define service
@@ -71,7 +71,7 @@ in
 
       # Define what the service actually does
       serviceConfig = {
-        ExecStart = "${runCommand.exec}"; # run command on start
+        ExecStart = "${runCommand}"; # run command on start
         ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID"; # run command on reload - example "systemctl reload waybar.service"
         Restart = "on-failure"; # restart events
         KillMode = "mixed";

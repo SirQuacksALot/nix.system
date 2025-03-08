@@ -61,7 +61,7 @@ in
       exec = "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}";
     } else {
       exec = "${cfg.package}/bin/waybar";
-    }
+    };
 
     # Define service
     systemd.user.services.waybar = mkIf cfg.systemd.enable {

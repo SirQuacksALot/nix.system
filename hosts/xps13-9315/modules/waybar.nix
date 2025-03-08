@@ -14,8 +14,6 @@ let
   inherit (lib.modules) mkIf mkMerge;
 
   cfg = config.waybar;
-  configFile = null;
-  styleFile = null;
 in
 {
   #----------------------------------------------------------------

@@ -60,7 +60,7 @@ in
 
     runCommand = mkIf cfg.configs.enable {
       exec = "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}";
-    }
+    };
 
     # Define service
     systemd.user.services.waybar = mkIf cfg.systemd.enable {

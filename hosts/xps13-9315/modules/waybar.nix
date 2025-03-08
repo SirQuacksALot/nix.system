@@ -78,26 +78,24 @@ in
       pkgs.writeTextDir "~/.config/waybar/style.css" cfg.style;
 
     # Make a system service
-    mkIf cfg.systemd.enable {
-      systemd.user.services.waybar = {
-        Unit = {
-          PartOf = [ cfg.systemd.target ];
-          After = [ cfg.systemd.target ];
-          ConditionEnvironment = "WAYLAND_DISPLAY";
-          X-Restart-Triggers = optional (cfg.settings != null)
-            "${configFile}"
-            ++ optional (cfg.style != null)
-            "${styleFile}";
-        };
+    systemd.user.services.waybar = mkIf cfg.systemd.enable{
+      Unit = {
+        PartOf = [ cfg.systemd.target ];
+        After = [ cfg.systemd.target ];
+        ConditionEnvironment = "WAYLAND_DISPLAY";
+        X-Restart-Triggers = optional (cfg.settings != null)
+          "${configFile}"
+          ++ optional (cfg.style != null)
+          "${styleFile}";
+      };
 
-        Service = {
-          ExecStart = "${cfg.package}/bin/waybar";
-          ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
-          Restart = "on-failure";
-          KillMode = "mixed";
-        } // optionalAttrs cfg.systemd.enableInspect {
-          Environment = [ "GTK_DEBUG=interactive" ];
-        };
+      Service = mkIf cfg.systemd.enable{
+        ExecStart = "${cfg.package}/bin/waybar";
+        ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
+        Restart = "on-failure";
+        KillMode = "mixed";
+      } // optionalAttrs cfg.systemd.enableInspect {
+        Environment = [ "GTK_DEBUG=interactive" ];
 
         Install.WantedBy =
           lib.optional (cfg.systemd.target != null) cfg.systemd.target;

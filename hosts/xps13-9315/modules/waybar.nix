@@ -89,15 +89,16 @@ in
 
     # Make a system service
     service = mkIf cfg.systemd.enable {
+      inherit configFile;
       systemd.user.services.waybar = {
         Unit = {
           PartOf = [ cfg.systemd.target ];
           After = [ cfg.systemd.target ];
           ConditionEnvironment = "WAYLAND_DISPLAY";
           X-Restart-Triggers = optional (cfg.settings != null)
-            "${cfg.config.configFile.source}"
+            "${configFile.source}"
             ++ optional (cfg.style != null)
-            "${cfg.config.styleFile.source}";
+            "$styleFile.source}";
         };
 
         Service = {

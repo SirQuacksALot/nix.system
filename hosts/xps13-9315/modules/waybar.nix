@@ -55,7 +55,7 @@ in
 
     systemd.user.services.waybar = mkIf cfg.systemd.enable{
       enable = true;
-      after = [ cfg.systemd.target ];
+      after = [ "default.target" ];
       wantedBy = [ "default.target" ];
 
       unitConfig = {

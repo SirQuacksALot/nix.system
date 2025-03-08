@@ -89,7 +89,7 @@ in
     };
 
     # Make a system service
-    service = mkIF cfg.systemd.enable {
+    service = mkIf cfg.systemd.enable {
       systemd.user.services.waybar = {
         Unit = {
           Description =

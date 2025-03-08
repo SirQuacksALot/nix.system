@@ -4,7 +4,7 @@
 
 <br>
 
-[![Nix](https://img.shields.io/badge/NIXOS-stable-809fdf.svg?logo=NixOS&logoColor=809fdf&style=flat-square)](https://nixos.org/) [![Nix](https://img.shields.io/badge/Nix_Flakes-Check-809fdf.svg?logo=NixOS&logoColor=809fdf&style=flat-square)](https://nixos.org/) [![Hyprland Badge](https://img.shields.io/badge/Hyprland-stable-809fdf?logo=hyprland&logoColor=809fdf&style=flat-square)](https://hyprland.org/)
+[![Nix](https://img.shields.io/badge/Nix_Os-stable-809fdf.svg?logo=NixOS&logoColor=809fdf&style=flat-square)](https://nixos.org/) [![Nix](https://img.shields.io/badge/Nix_Flakes-Check-809fdf.svg?logo=NixOS&logoColor=809fdf&style=flat-square)](https://nixos.org/) [![Hyprland Badge](https://img.shields.io/badge/Hyprland-stable-809fdf?logo=hyprland&logoColor=809fdf&style=flat-square)](https://hyprland.org/)
 
 <br>
 

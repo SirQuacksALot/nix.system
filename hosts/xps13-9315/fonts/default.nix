@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     twemoji-color-font
   ];
+
   fonts = {
     fonts = with pkgs; [
       noto-fonts
@@ -13,10 +14,13 @@
       twemoji-color-font
       fira-code
       fira-code-symbols
-    ];
-    fontconfig = {
-      localConf = ''
-        <?xml version="1.0"?>
+  ];
+
+  used-font = "Caskaydia Cove NF";
+
+  fontconfig = {
+    localConf = ''
+      <?xml version="1.0"?>
         <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
         <fontconfig>
           <!-- Default system-ui fonts -->
@@ -73,10 +77,10 @@
               <string>zh-HK</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -85,11 +89,11 @@
               <string>zh-HK</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
               <!-- not have HK -->
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -98,10 +102,10 @@
               <string>zh-HK</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -110,10 +114,10 @@
               <string>zh-TW</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -122,10 +126,10 @@
               <string>zh-TW</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -134,10 +138,10 @@
               <string>zh-TW</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -146,10 +150,10 @@
               <string>ja</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -158,10 +162,10 @@
                 <string>ja</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -170,10 +174,10 @@
               <string>ja</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -182,10 +186,10 @@
               <string>ko</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -194,10 +198,10 @@
               <string>ko</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -206,10 +210,10 @@
               <string>ko</string>
             </test>
             <test name="family">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -219,7 +223,7 @@
               <string>Source Code</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
           <match target="pattern">
@@ -227,10 +231,10 @@
               <string>en</string>
             </test>
             <test name="family" compare="contains">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
 
@@ -239,10 +243,10 @@
               <string>en</string>
             </test>
             <test name="family" compare="contains">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
         </fontconfig>
@@ -252,10 +256,10 @@
               <string>de</string>
             </test>
             <test name="family" compare="contains">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
-              <string>Caskaydia Cove NF</string>
+              <string>${used-font}</string>
             </edit>
           </match>
         </fontconfig>

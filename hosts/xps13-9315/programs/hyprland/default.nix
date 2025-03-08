@@ -16,7 +16,7 @@
 
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
-  programs.hyprland.withUWSM = true;
+  programs.hyprland.withUWSM = true; # enable to have clean system service driven session
 
   environment.sessionVariables = rec {
     EDITOR = "vscode";

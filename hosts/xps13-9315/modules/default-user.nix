@@ -19,7 +19,7 @@ in
       autosuggestions.enable = true;
       ohMyZsh.enable = true;
       ohMyZsh.plugins = [ "git" "sudo" "docker" "kubectl" ];
-      ohMyZsh.theme = "robbyrussell";
+      ohMyZsh.theme = "Oxide";
       syntaxHighlighting.enable = true;
     };
     

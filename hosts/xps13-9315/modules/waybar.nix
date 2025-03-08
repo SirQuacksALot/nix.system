@@ -78,7 +78,7 @@ in
       pkgs.writeTextDir "~/.config/waybar/style.css" cfg.style;
 
     # Make a system service
-    (mkIf cfg.systemd.enable {
+    mkIf cfg.systemd.enable {
       systemd.user.services.waybar = {
         Unit = {
           PartOf = [ cfg.systemd.target ];
@@ -102,6 +102,6 @@ in
         Install.WantedBy =
           lib.optional (cfg.systemd.target != null) cfg.systemd.target;
       };
-    })
+    }
   };
 }

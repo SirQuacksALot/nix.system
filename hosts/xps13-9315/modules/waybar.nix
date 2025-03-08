@@ -55,8 +55,8 @@ in
 
     systemd.user.services.waybar = mkIf cfg.systemd.enable{
       enable = true;
-      after = [ "graphical-session.target" ];
-      partOf = [ "graphical-session.target" ];
+      after = [ "wayland-session@Hyprland.target" ];
+      partOf = [ "wayland-session@Hyprland.target" ];
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/waybar";
@@ -65,7 +65,7 @@ in
         KillMode = "mixed";
       };
 
-      wantedBy = [ "graphical-session.target" ];
+      wantedBy = [ "wayland-session@Hyprland.target" ];
     };
   };
 }

@@ -49,4 +49,4 @@ This is my approche to NixOs. This repo holds the the nixos config for my person
 
 Author [@SirQuacksALot](https://github.com/SirQuacksALot) at 2025-present
 
-![LICENSE](http://badges.chanserver.de/github/license/SirQuacksALot/nix.dotfiles.configs?style=flat-square&logo=github)
+![LICENSE](http://badges.chanserver.de/github/license/SirQuacksALot/nix.dotfiles?style=flat-square&logo=github)

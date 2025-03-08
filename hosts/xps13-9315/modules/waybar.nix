@@ -14,7 +14,6 @@ let
   inherit (lib.modules) mkIf mkMerge;
 
   cfg = config.waybar;
-  jsonFormat = pkgs.format.json {};
 in
 {
   #----------------------------------------------------------------
@@ -96,9 +95,9 @@ in
           After = [ cfg.systemd.target ];
           ConditionEnvironment = "WAYLAND_DISPLAY";
           X-Restart-Triggers = optional (cfg.settings != null)
-            "${cfg.configFile.source}"
+            "${configFile.source}"
             ++ optional (cfg.style != null)
-            "${cfg.styleFile.source}";
+            "${styleFile.source}";
         };
 
         Service = {

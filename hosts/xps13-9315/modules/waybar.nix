@@ -89,7 +89,7 @@ in
     };
 
     # Make a system service
-    (mkIF cfg.systemd.enable {
+    service = mkIF cfg.systemd.enable {
       systemd.user.services.waybar = {
         Unit = {
           Description =
@@ -116,6 +116,6 @@ in
         Install.WantedBy =
           lib.optional (cfg.systemd.target != null) cfg.systemd.target;
       };
-    })
+    };
   };
 }

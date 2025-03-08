@@ -55,16 +55,6 @@ in
 
     systemd.user.services.waybar = mkIf cfg.systemd.enable{
       enable = true;
-      after = [ "default.target" ];
-      wantedBy = [ "default.target" ];
-
-      unitConfig = {
-        ConditionEnvironment = "WAYLAND_DISPLAY";
-        X-Restart-Triggers = optional (cfg.settings != null)
-          "~/.config/waybar/config"
-          ++ optional (cfg.style != null)
-          "~/.config/waybar/style.css";
-      };
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/waybar";
@@ -72,6 +62,8 @@ in
         Restart = "on-failure";
         KillMode = "mixed";
       };
+
+      Install.wantedBy = [ "default.target" ];
     };
   };
 }

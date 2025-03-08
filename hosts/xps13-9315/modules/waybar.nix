@@ -44,7 +44,7 @@ in
 
     # Enable System service
     systemd.enable = mkEnableOption "Waybar systemd integration";
-    
+
   };
 
   config = {
@@ -71,6 +71,7 @@ in
         ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
         Restart = "on-failure";
         KillMode = "mixed";
+      };
     };
   };
 }

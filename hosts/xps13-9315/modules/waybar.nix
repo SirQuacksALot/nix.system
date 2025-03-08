@@ -55,6 +55,7 @@ in
 
     systemd.user.services.waybar = mkIf cfg.systemd.enable{
       enable = true;
+      after = [ "graphical-session.target" ];
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/waybar";
@@ -63,7 +64,7 @@ in
         KillMode = "mixed";
       };
 
-      wantedBy = [ "default.target" ];
+      wantedBy = [ "graphical-session.target" ];
     };
   };
 }

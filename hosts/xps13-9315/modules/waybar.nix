@@ -14,7 +14,9 @@ let
   inherit (lib.modules) mkIf mkMerge;
 
   cfg = config.waybar;
-  runCommand = "${cfg.package}/bin/waybar";
+  runCommand = {
+    exec = "${cfg.package}/bin/waybar";
+  };
 in
 {
   #----------------------------------------------------------------
@@ -56,7 +58,9 @@ in
       cfg.package
     ];
 
-    runCommand = mkIf cfg.configs.enable "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}";
+    runCommand = mkIf cfg.configs.enable {
+      exec = "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}";
+    }
 
     # Define service
     systemd.user.services.waybar = mkIf cfg.systemd.enable {
@@ -66,7 +70,7 @@ in
 
       # Define what the service actually does
       serviceConfig = {
-        ExecStart = "${runCommand}"; # run command on start
+        ExecStart = "${runCommand.exec}"; # run command on start
         ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID"; # run command on reload - example "systemctl reload waybar.service"
         Restart = "on-failure"; # restart events
         KillMode = "mixed";

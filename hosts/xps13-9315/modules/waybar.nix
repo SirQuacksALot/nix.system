@@ -30,18 +30,9 @@ in
       defaultText = literalExpression "pkgs.waybar";
     };
 
-    configs = mkEnableOption {
-      settings.source = mkOption {
-        type = either path line;
-        default = ''
-        '';
-      };
-
-      style.source = mkOption {
-        type = either path line;
-        default = ''
-        '';
-      };
+    runCommand = mkOption {
+      type = nullOr path;
+      default = "${cfg.package}/bin/waybar";
     };
 
     # Enable System service
@@ -63,9 +54,7 @@ in
 
       # Define what the service actually does
       serviceConfig = {
-        ExecStart = if cfg.configs.enable
-          then "${cfg.package}/bin/waybar"
-          else "${cfg.package}/bin/waybar"; # run command on start
+        ExecStart = "${cfg.runCommand}"; # run command on start
         ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID"; # run command on reload - example "systemctl reload waybar.service"
         Restart = "on-failure"; # restart events
         KillMode = "mixed";

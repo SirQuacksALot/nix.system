@@ -20,7 +20,7 @@ in
   #----------------------------------------------------------------
   # Define Options
   #
-  options.waybar = {
+  options.waybar = with lib.types; {
     # Should it be enabled ? 
     enable = mkEnableOption "waybar";
     # Package option
@@ -48,18 +48,18 @@ in
     ];
 
     # make config file
-    xdg.configFile."waybar/config" = mkIf (settings != [ ]){
-      source = if builtins.isPath cfg.style || isStorePath cfg.style then
-        cfg.style
+    xdg.configFile."waybar/config" = mkIf (cfg.settings != null){
+      source = if builtins.isPath cfg.settings || isStorePath cfg.settings then
+        cfg.settings
       else 
-        pkgs.writeText "waybar/config" cfg.style;
+        pkgs.writeText "waybar/config" cfg.settings;
       onChange = ''
         ${pkgs.procps}/bin/pkill -u $USER -USR2 waybar || true
       '';
     };
     
     # make style file
-    xdg.configFile."waybar/style.css" = mkIf (settings != [ ]){
+    xdg.configFile."waybar/style.css" = mkIf (cfg.style != [ ]){
       source = if builtins.isPath cfg.style || isStorePath cfg.style then
         cfg.style
       else 

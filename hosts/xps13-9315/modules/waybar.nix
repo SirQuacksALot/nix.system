@@ -53,19 +53,21 @@ in
       cfg.package
     ];
 
+    # Define service
     systemd.user.services.waybar = mkIf cfg.systemd.enable{
-      enable = true;
-      after = [ "wayland-session@Hyprland.target" ];
-      partOf = [ "wayland-session@Hyprland.target" ];
+      enable = true; # enable newly defined service
+      after = [ "wayland-session@Hyprland.target" ]; # run after hyprland session has been reached
+      partOf = [ "wayland-session@Hyprland.target" ]; # made part of hyprland session service routine - will be killed if hyprland session service is stopped
 
+      # Define what the service actually does
       serviceConfig = {
-        ExecStart = "${cfg.package}/bin/waybar";
-        ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
-        Restart = "on-failure";
+        ExecStart = "${cfg.package}/bin/waybar"; # run command on start
+        ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID"; # run command on reload - example "systemctl reload waybar.service"
+        Restart = "on-failure"; # restart events
         KillMode = "mixed";
       };
 
-      wantedBy = [ "wayland-session@Hyprland.target" ];
+      wantedBy = [ "wayland-session@Hyprland.target" ]; # link to hyprland session service
     };
   };
 }

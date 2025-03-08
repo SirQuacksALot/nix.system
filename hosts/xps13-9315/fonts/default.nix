@@ -1,5 +1,8 @@
 { config, lib, pkgs, ... }:
 
+let 
+  settings = import ./settings.nix;
+in
 {
   environment.systemPackages = with pkgs; [
     twemoji-color-font
@@ -16,9 +19,7 @@
       fira-code-symbols
   ];
 
-
   fontconfig = {
-    used-font = "Caskaydia Cove NF";
     localConf = ''
       <?xml version="1.0"?>
         <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
@@ -77,10 +78,10 @@
               <string>zh-HK</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -89,11 +90,11 @@
               <string>zh-HK</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
               <!-- not have HK -->
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -102,10 +103,10 @@
               <string>zh-HK</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -114,10 +115,10 @@
               <string>zh-TW</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -126,10 +127,10 @@
               <string>zh-TW</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -138,10 +139,10 @@
               <string>zh-TW</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -150,10 +151,10 @@
               <string>ja</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -162,10 +163,10 @@
                 <string>ja</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -174,10 +175,10 @@
               <string>ja</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -186,10 +187,10 @@
               <string>ko</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -198,10 +199,10 @@
               <string>ko</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -210,10 +211,10 @@
               <string>ko</string>
             </test>
             <test name="family">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -223,7 +224,7 @@
               <string>Source Code</string>
             </test>
             <edit name="family" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
           <match target="pattern">
@@ -231,10 +232,10 @@
               <string>en</string>
             </test>
             <test name="family" compare="contains">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
 
@@ -243,10 +244,10 @@
               <string>en</string>
             </test>
             <test name="family" compare="contains">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
         </fontconfig>
@@ -256,10 +257,10 @@
               <string>de</string>
             </test>
             <test name="family" compare="contains">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
-              <string>${used-font}</string>
+              <string>${settings.used-font}</string>
             </edit>
           </match>
         </fontconfig>

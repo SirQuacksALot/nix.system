@@ -44,11 +44,6 @@ in
       };
     };
 
-    runCommand = mkOption {
-      type = str;
-      default = "${cfg.package}/bin/waybar";
-    };
-
     # Enable System service
     systemd.enable = mkEnableOption "Waybar systemd integration";
 
@@ -60,10 +55,6 @@ in
       cfg.package
     ];
 
-    (mkIf cfg.configs.enable {
-      runCommand = "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}";
-    })
-
     # Define service
     systemd.user.services.waybar = mkIf cfg.systemd.enable {
       enable = true; # enable newly defined service
@@ -72,7 +63,9 @@ in
 
       # Define what the service actually does
       serviceConfig = {
-        ExecStart = "${runCommand}"; # run command on start
+        ExecStart = if cfg.configs.enable
+          then "${cfg.package}/bin/waybar"
+          else "${cfg.package}/bin/waybar"; # run command on start
         ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID"; # run command on reload - example "systemctl reload waybar.service"
         Restart = "on-failure"; # restart events
         KillMode = "mixed";

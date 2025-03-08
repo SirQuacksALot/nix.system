@@ -66,12 +66,15 @@ in
     ];
 
     systemd.user.services.waybar = mkIf cfg.systemd.enable{
-      PartOf = [ cfg.systemd.target ];
-      ConditionEnvironment = "WAYLAND_DISPLAY";
-      X-Restart-Triggers = optional (cfg.settings != null)
-        "~/.config/waybar/config"
-        ++ optional (cfg.style != null)
-        "~/.config/waybar/style.css";
+      unitConfig = {
+        PartOf = [ cfg.systemd.target ];
+        After = [ cfg.systemd.target ];
+        ConditionEnvironment = "WAYLAND_DISPLAY";
+        X-Restart-Triggers = optional (cfg.settings != null)
+          "~/.config/waybar/config"
+          ++ optional (cfg.style != null)
+          "~/.config/waybar/style.css";
+      };
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/waybar";

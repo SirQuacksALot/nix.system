@@ -35,6 +35,7 @@
               <string>sans-serif</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
+              <string>Caskaydia Cove NF</string>
               <string>Noto Sans CJK SC</string>
               <string>Noto Sans</string>
               <string>Twemoji</string>
@@ -47,6 +48,7 @@
               <string>serif</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
+              <string>Caskaydia Cove NF</string>
               <string>Noto Serif CJK SC</string>
               <string>Noto Serif</string>
               <string>Twemoji</string>
@@ -59,6 +61,7 @@
               <string>monospace</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
+              <string>Caskaydia Cove NF</string>
               <string>Noto Sans Mono CJK SC</string>
               <string>Symbols Nerd Font</string>
               <string>Twemoji</string>
@@ -70,10 +73,10 @@
               <string>zh-HK</string>
             </test>
             <test name="family">
-              <string>Noto Sans CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Sans CJK HK</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -82,11 +85,11 @@
               <string>zh-HK</string>
             </test>
             <test name="family">
-              <string>Noto Serif CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
               <!-- not have HK -->
-              <string>Noto Serif CJK TC</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -95,10 +98,10 @@
               <string>zh-HK</string>
             </test>
             <test name="family">
-              <string>Noto Sans Mono CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Sans Mono CJK HK</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -107,10 +110,10 @@
               <string>zh-TW</string>
             </test>
             <test name="family">
-              <string>Noto Sans CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Sans CJK TC</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -119,10 +122,10 @@
               <string>zh-TW</string>
             </test>
             <test name="family">
-              <string>Noto Serif CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Serif CJK TC</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -131,10 +134,10 @@
               <string>zh-TW</string>
             </test>
             <test name="family">
-              <string>Noto Sans Mono CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Sans Mono CJK TC</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -143,10 +146,10 @@
               <string>ja</string>
             </test>
             <test name="family">
-              <string>Noto Sans CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Sans CJK JP</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -155,10 +158,10 @@
                 <string>ja</string>
             </test>
             <test name="family">
-              <string>Noto Serif CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Serif CJK JP</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -167,10 +170,10 @@
               <string>ja</string>
             </test>
             <test name="family">
-              <string>Noto Sans Mono CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Sans Mono CJK JP</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -179,10 +182,10 @@
               <string>ko</string>
             </test>
             <test name="family">
-              <string>Noto Sans CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Sans CJK KR</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -191,10 +194,10 @@
               <string>ko</string>
             </test>
             <test name="family">
-              <string>Noto Serif CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Serif CJK KR</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -203,10 +206,10 @@
               <string>ko</string>
             </test>
             <test name="family">
-              <string>Noto Sans Mono CJK SC</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Noto Sans Mono CJK KR</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -216,7 +219,7 @@
               <string>Source Code</string>
             </test>
             <edit name="family" binding="strong">
-              <string>Iosevka Term</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
           <match target="pattern">
@@ -224,10 +227,10 @@
               <string>en</string>
             </test>
             <test name="family" compare="contains">
-              <string>Noto Sans CJK</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
-              <string>Noto Sans</string>
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
 
@@ -236,10 +239,23 @@
               <string>en</string>
             </test>
             <test name="family" compare="contains">
-              <string>Noto Serif CJK</string>
+              <string>Caskaydia Cove NF</string>
             </test>
             <edit name="family" mode="prepend" binding="strong">
-              <string>Noto Serif</string>
+              <string>Caskaydia Cove NF</string>
+            </edit>
+          </match>
+        </fontconfig>
+        
+        <match target="pattern">
+            <test name="lang" compare="contains">
+              <string>de</string>
+            </test>
+            <test name="family" compare="contains">
+              <string>Caskaydia Cove NF</string>
+            </test>
+            <edit name="family" mode="prepend" binding="strong">
+              <string>Caskaydia Cove NF</string>
             </edit>
           </match>
         </fontconfig>

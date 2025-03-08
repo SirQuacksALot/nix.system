@@ -44,19 +44,7 @@ in
 
     # Enable System service
     systemd.enable = mkEnableOption "Waybar systemd integration";
-
-    # Define target fpr system service
-    systemd.target = mkOption {
-      type = nullOr str;
-      default = "default.target";
-      defaultText = literalExpression "default.target";
-    };
     
-    # Enable to inspect obejcts - docs: https://developer.gnome.org/documentation/tools/inspector.html
-    systemd.enableInspect = mkOption {
-      type = bool;
-      default = false;
-    };
   };
 
   config = {
@@ -66,9 +54,11 @@ in
     ];
 
     systemd.user.services.waybar = mkIf cfg.systemd.enable{
+      enable = true;
+      after = [ cfg.systemd.target ];
+      wantedBy = [ "default.target" ];
+
       unitConfig = {
-        PartOf = [ cfg.systemd.target ];
-        After = [ cfg.systemd.target ];
         ConditionEnvironment = "WAYLAND_DISPLAY";
         X-Restart-Triggers = optional (cfg.settings != null)
           "~/.config/waybar/config"
@@ -81,12 +71,6 @@ in
         ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
         Restart = "on-failure";
         KillMode = "mixed";
-      } // optionalAttrs cfg.systemd.enableInspect {
-        Environment = [ "GTK_DEBUG=interactive" ];
-
-        Install.WantedBy =
-          lib.optional (cfg.systemd.target != null) cfg.systemd.target;
-      };
     };
   };
 }

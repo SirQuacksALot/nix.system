@@ -13,6 +13,7 @@
         config.allowUnfree = true;
       };
 
+
       specialArgs = { inherit zen-browser; };
 
       modules = [

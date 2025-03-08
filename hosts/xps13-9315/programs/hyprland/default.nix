@@ -12,6 +12,7 @@
   ];
 
   waybar.enable = true;
+  # waybar.runParams = "-c ~/.config/waybar/config -s ~/.config/waybar/style.css";
   waybar.systemd.enable = true;
 
   programs.hyprland.enable = true;

@@ -65,28 +65,15 @@ in
       cfg.package
     ];
 
-    # make config file
-    configFile = if builtins.isPath cfg.settings || isStorePath cfg.settings then
-      cfg.settings
-    else 
-      pkgs.writeTextDir "~/.config/waybar/config" cfg.settings;
-    
-    # make style file
-    styleFile = if builtins.isPath cfg.style || isStorePath cfg.style then
-      cfg.style
-    else 
-      pkgs.writeTextDir "~/.config/waybar/style.css" cfg.style;
-
-    # Make a system service
     systemd.user.services.waybar = mkIf cfg.systemd.enable{
       Unit = {
         PartOf = [ cfg.systemd.target ];
         After = [ cfg.systemd.target ];
         ConditionEnvironment = "WAYLAND_DISPLAY";
         X-Restart-Triggers = optional (cfg.settings != null)
-          "~/.config/waybar/config"
+          "${configFile}"
           ++ optional (cfg.style != null)
-          "~/.config/waybar/style.css";
+          "${styleFile}";
       };
 
       Service = mkIf cfg.systemd.enable{

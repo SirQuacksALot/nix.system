@@ -14,9 +14,7 @@ let
   inherit (lib.modules) mkIf mkMerge;
 
   cfg = config.waybar;
-  runCommand = {
-    exec = "${cfg.package}/bin/waybar";
-  };
+  runCommand.exec = "";
 in
 {
   #----------------------------------------------------------------
@@ -58,9 +56,12 @@ in
       cfg.package
     ];
 
-    runCommand = mkIf cfg.configs.enable {
+    runCommand = if cfg.configs.enable 
+    then {
       exec = "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}";
-    };
+    } else {
+      exec = "${cfg.package}/bin/waybar";
+    }
 
     # Define service
     systemd.user.services.waybar = mkIf cfg.systemd.enable {

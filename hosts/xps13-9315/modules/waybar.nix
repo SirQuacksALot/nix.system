@@ -95,9 +95,9 @@ in
           After = [ cfg.systemd.target ];
           ConditionEnvironment = "WAYLAND_DISPLAY";
           X-Restart-Triggers = optional (cfg.settings != null)
-            "${config.configFile.source}"
+            "${cfg.config.configFile.source}"
             ++ optional (cfg.style != null)
-            "${config.styleFile.source}";
+            "${cfg.config.styleFile.source}";
         };
 
         Service = {

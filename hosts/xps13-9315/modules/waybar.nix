@@ -14,6 +14,8 @@ let
   inherit (lib.modules) mkIf mkMerge;
 
   cfg = config.waybar;
+  configFile = null;
+  styleFile = null;
 in
 {
   #----------------------------------------------------------------
@@ -89,11 +91,8 @@ in
 
     # Make a system service
     service = mkIf cfg.systemd.enable {
-      inherit configFile;
       systemd.user.services.waybar = {
-        inherit configFile;
         Unit = {
-          inherit configFile;
           PartOf = [ cfg.systemd.target ];
           After = [ cfg.systemd.target ];
           ConditionEnvironment = "WAYLAND_DISPLAY";

@@ -76,7 +76,7 @@ in
           "~/.config/waybar/style.css";
       };
 
-      Service = {
+      serviceConfig = {
         ExecStart = "${cfg.package}/bin/waybar";
         ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
         Restart = "on-failure";

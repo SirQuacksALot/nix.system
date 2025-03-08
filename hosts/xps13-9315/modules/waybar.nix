@@ -72,7 +72,7 @@ in
       pkgs.writeTextDir "~/.config/waybar/config" cfg.settings;
     
     # make style file
-    configFile = if builtins.isPath cfg.style || isStorePath cfg.style then
+    styleFile = if builtins.isPath cfg.style || isStorePath cfg.style then
       cfg.style
     else 
       pkgs.writeTextDir "~/.config/waybar/style.css" cfg.style;
@@ -85,9 +85,9 @@ in
           After = [ cfg.systemd.target ];
           ConditionEnvironment = "WAYLAND_DISPLAY";
           X-Restart-Triggers = optional (cfg.settings != null)
-            "${configFile.source}"
+            "${configFile}"
             ++ optional (cfg.style != null)
-            "${styleFile.source}";
+            "${styleFile}";
         };
 
         Service = {

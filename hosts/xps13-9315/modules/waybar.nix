@@ -48,7 +48,7 @@ in
     # Define target fpr system service
     systemd.target = mkOption {
       type = nullOr str;
-      default = config.wayland.systemd.target;
+      default = "hyprland-session.target";
       defaultText = literalExpression "hyprland-session.target";
     };
     

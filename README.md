@@ -33,6 +33,7 @@ This is my approche to NixOs. This repo holds the the nixos config for my person
 │     ├──modules
 │     ├──programs
 │     │   └──hypr
+│     ├──scripts
 │     ├──services
 │     └──virtualisation
 ├──nixos

@@ -30,16 +30,18 @@ in
       defaultText = literalExpression "pkgs.waybar";
     };
 
-    # Config content as path or sting '' content ''
-    settings = mkOption {
-      type = nullOr (either path lines);
-      default = null;
-    };
+    configs = mkEnableOption {
+      settings.source = mkOption {
+        type = either path line;
+        default = ''
+        '';
+      };
 
-    # Css styling as path ort css string '' content ''
-    style = mkOption {
-      type = nullOr (either path lines);
-      default = null;
+      style.source = mkOption {
+        type = either path line;
+        default = ''
+        '';
+      };
     };
 
     # Enable System service
@@ -53,8 +55,17 @@ in
       cfg.package
     ];
 
+    runCommand = mkMerge [
+      ( mkIf cfg.configs.enable {
+        "${cfg.package}/bin/waybar -c ${cfg.configs.settings.source} -s ${cfg.configs.style.source}"
+      })
+      ( mkIf !cfg.configs.enable {
+        "${cfg.package}/bin/waybar"
+      })
+    ]
+
     # Define service
-    systemd.user.services.waybar = mkIf cfg.systemd.enable{
+    systemd.user.services.waybar = mkIf cfg.systemd.enable {
       enable = true; # enable newly defined service
       after = [ "wayland-session@Hyprland.target" ]; # run after hyprland session has been reached
       partOf = [ "wayland-session@Hyprland.target" ]; # made part of hyprland session service routine - will be killed if hyprland session service is stopped

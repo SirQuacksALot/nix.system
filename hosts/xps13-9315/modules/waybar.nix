@@ -48,8 +48,8 @@ in
     # Define target fpr system service
     systemd.target = mkOption {
       type = nullOr str;
-      default = "hyprland-session.target";
-      defaultText = literalExpression "hyprland-session.target";
+      default = "default.target";
+      defaultText = literalExpression "default.target";
     };
     
     # Enable to inspect obejcts - docs: https://developer.gnome.org/documentation/tools/inspector.html

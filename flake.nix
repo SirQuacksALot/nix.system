@@ -11,8 +11,8 @@
       pkgs = import nixpkgs {
         system = "x86_64-linux";
         config.allowUnfree = true;
+        config.android_sdk.accept_license = true;
       };
-
 
       specialArgs = { inherit zen-browser; };
 

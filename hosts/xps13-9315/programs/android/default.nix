@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    android-studio-full
+    android-studio
     flutterPackages-source.stable
     jdk17
   ];

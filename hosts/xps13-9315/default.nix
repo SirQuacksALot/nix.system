@@ -10,6 +10,8 @@
   ];
 
   users.users.sebastian.packages = with pkgs; [
+    keepassxc
+    postman
     discord
     docker-compose
     vscode

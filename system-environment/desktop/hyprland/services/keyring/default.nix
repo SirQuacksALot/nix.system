@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [ polkit_gnome ];
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;

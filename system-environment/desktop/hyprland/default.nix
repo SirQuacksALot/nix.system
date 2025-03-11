@@ -1,4 +1,4 @@
-{ pkgs, hyprGreetd, username, ... }: 
+{ pkgs, username, ... }: 
 let
   hyprconfig = builtins.toFile "hyprland.conf" ''
     # #######################################################################################

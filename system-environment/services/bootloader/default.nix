@@ -14,6 +14,6 @@
     # plymouth.enable = true; # plymouth loading overlay - may cause issues with graphics driver loading and displayLink driver
 
     loader.systemd-boot-enable = true;
-    loader.efi.canTouchEfiVaribales = true;
+    loader.efi.canTouchEfiVariables = true;
   };
 }

@@ -24,6 +24,7 @@
     imagemagick                       # image editor
     inxi                              # system info tool - cli
     jq                                # json processor - cli
+    fzf                               # cmd fuzzer
     libsForQt5.qtstyleplugin-kvantum  # theme engine - svg based for qt5
     nwg-displays                      # output manager for hyprland
     nwg-look                          # editor for wayland env's -gtk3

@@ -4,6 +4,7 @@
     ./fonts
     ./services
     ./programs
+    ./packages
     ./desktop
   ];
 

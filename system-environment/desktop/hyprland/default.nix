@@ -316,6 +316,6 @@ in
   hyprGreetd = {
     enable = true;
     username = username;
-    hyprconfig = hyprconfig
+    hyprconfig = hyprconfig;
   };
 }

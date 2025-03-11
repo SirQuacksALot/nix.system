@@ -20,7 +20,7 @@ in
       settings = {
         default_session = {
           user = cfg.username;
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland --config ${cfg.hyprconfig}"; # start Hyprland with a TUI login manager - change to service run. so other programs can a dependent service too
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland -c ${cfg.hyprconfig}"; # start Hyprland with a TUI login manager - change to service run. so other programs can a dependent service too
         };
       };
     };

@@ -52,6 +52,7 @@ in
         alias la='ls -a'
         alias lla='ls -la'
         alias lt='ls --tree'
+        alias gitsync='git fetch && git pull'
 
         source <(fzf --zsh);
         HISTFILE=~/.zsh_history;

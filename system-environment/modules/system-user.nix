@@ -28,6 +28,7 @@ in
       home = "/home/${cfg.username}";
       packages = with pkgs; [
         # ...
+        lsd
       ];
     };
 

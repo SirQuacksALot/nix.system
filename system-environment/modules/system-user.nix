@@ -53,6 +53,7 @@ in
         alias lla='ls -la'
         alias lt='ls --tree'
         alias gitsync='git fetch && git pull'
+        alias syssync='gitsync && sudo nixos-rebuild switch --show-trace --flake .#xps13'
 
         source <(fzf --zsh);
         HISTFILE=~/.zsh_history;

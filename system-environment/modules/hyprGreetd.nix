@@ -6,7 +6,7 @@ in
   options.hyprGreetd = {
     enable = lib.mkEnableOption "enable hypr greetd";
     username = lib.mkOption {
-      defualt = "seb";
+      default = "seb";
     };
     hyprconfig = lib.mkOption {
       default = "~/.config/hypr/hyprland.config";

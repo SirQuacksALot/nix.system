@@ -5,6 +5,5 @@
     ./flatpak
     ./gtk
     ./xserver
-    ./greetd
   ];
 }

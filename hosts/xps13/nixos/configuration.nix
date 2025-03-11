@@ -19,7 +19,7 @@ in
 
   # Experimental settings & optimisations
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.auto-optimise-store = true;
+  # nix.auto-optimise-store = true; # does not exist ? 
 
   console.keyMap = "${keyboardLayout}";
 

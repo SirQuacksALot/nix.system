@@ -1,6 +1,6 @@
 { pkgs, username, ... }: 
 let
-  inherit (import ../../default.nix) hyprconfig;
+  inherit (import ../../default.nix {pkgs = pkgs}) hyprconfig;
 in
 {
   services.greetd = {
@@ -16,3 +16,4 @@ in
 }
 
 # storpath functio to define the storepath - https://nix.dev/manual/nix/2.18/language/builtins#builtins-storePath
+# toFile states its referencing it self - https://nix.dev/manual/nix/2.18/language/builtins#builtins-toFile

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, android-nixpkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -7,15 +7,14 @@
     android-studio-tools
     flutter
     dart
-    flutterPackages-source.stable
     jdk17
-    adb-sync
     google-chrome
   ];
 
   environment.sessionVariables = {
     CHROME_EXECUTABLE = pkgs.google-chrome.meta.mainProgram;
-    ANDROID_HOME = "${pkgs.android-tools}/bin";
+    ANDROID_HOME = "/home/sebastian/Android/Sdk";
+    ANDROID_SDK_ROOT = "/nix/store/d609s6i3j3s7y9zi0p3193v7ywnns9la-android-sdk-platforms-34/libexec/android-sdk";
   };
 
   programs.adb.enable = true;

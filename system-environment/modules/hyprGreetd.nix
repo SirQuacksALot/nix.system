@@ -3,7 +3,7 @@ let
   cfg = config.hyprGreetd;
 in
 {
-  options.greetdService = {
+  options.hyprGreetd = {
     enable = lib.mkEnableOption "enable hypr greetd";
     username = lib.mkOption {
       defualt = "seb";

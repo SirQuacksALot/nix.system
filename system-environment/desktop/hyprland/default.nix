@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, hyprGreetd, username, ... }: 
 let
   hyprconfig = pkgs.toFile "hyprland.conf" ''
     # #######################################################################################
@@ -311,5 +311,11 @@ in
     enable = true;
     portalPackage = pkgs.xdg-desktop-portal-hyprland; # xdph none git
     xwayland.enable = true;
+  };
+
+  hyprGreetd = {
+    enable = true;
+    username = username;
+    hyprconfig = hyprconfig
   };
 }

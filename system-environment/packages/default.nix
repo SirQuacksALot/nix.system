@@ -1,4 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: 
+
+let
+  python-packages = pkgs.python3.withPackages (
+    ps: with ps; [
+      requests
+      pyquery   # needed for weather scripts
+    ]
+  );
+in
+{
   environment.systemPackages = (with pkgs; [
     clang         # build tools
     curl          # transfaring files with url 

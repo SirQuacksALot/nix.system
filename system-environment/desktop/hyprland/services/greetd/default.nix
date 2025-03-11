@@ -1,6 +1,6 @@
 { pkgs, username, ... }: 
 let
-  inherit (import ../../../default.nix) hyprconfig;
+  inherit (import ../../default.nix) hyprconfig;
 in
 {
   services.greetd = {

@@ -1,27 +1,40 @@
 {
-  description = "A very basic flake";
+  description = "My Nixos";
 
+  # Inputs
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
   inputs.nixos-hardware.url = "github:Nixos/nixos-hardware/master";
   inputs.zen-browser.url = "github:MarceColl/zen-browser-flake";
-  inputs.android-nixpkgs.url = "github:tadfisher/android-nixpkgs";
 
-  outputs = { self, nixpkgs, nixos-hardware, zen-browser, android-nixpkgs, ... }@attrs: {
+  # Outputs to flake body
+  outputs = { self, nixpkgs, nixos-hardware, ... }@attrs: 
+  
+  let 
+    # Base system defintion variables
+    system = "x86_64-linux";
+    host = "xps13";
+    username = "sebastian";
+  in 
+  {
 
-    nixosConfigurations.xps13-9315 = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${host} = nixpkgs.lib.nixosSystem {
+      # Global Package Provider definition
       pkgs = import nixpkgs {
-        system = "x86_64-linux";
+        inherit system;
         config.allowUnfree = true;
         config.android_sdk.accept_license = true;
       };
 
-      specialArgs = { inherit zen-browser android-nixpkgs; };
+      # Arguments to inherit to all modules
+      specialArgs = { inherit system inputs username host; };
 
+      # Module import list
       modules = [
         nixos-hardware.nixosModules.dell-xps-13-9315
-        ./nixos/configuration.nix
-        ./hosts/xps13-9315
+        ./hosts/${host}/nixos/configuration.nix
       ];
+
     };
+
   };
 }

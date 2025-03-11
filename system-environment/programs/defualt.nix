@@ -1,0 +1,12 @@
+# register nix config - imports all programs defined in thair respectiv files
+{ ... }: {
+  imports = [
+    ./zen-browser
+    ./visual-studio-code
+    ./spotify
+    ./postman
+    ./keepassxc
+    ./discord
+    # ./android-studio
+  ];
+}

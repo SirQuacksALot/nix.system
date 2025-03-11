@@ -1,7 +1,7 @@
 { pkgs, username, ... }: 
-# let
-#   inherit (import ../../../default.nix) hyprconfig;
-# in
+let
+  inherit (import ../../../default.nix) hyprconfig;
+in
 {
   services.greetd = {
     enable = true;
@@ -9,7 +9,7 @@
     settings = {
       default_session = {
         user = username;
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland "; # --config ${hyprconfig} - start Hyprland with a TUI login manager - change to service run. so other programs can a dependent service too
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland --config ${hyprconfig}"; # start Hyprland with a TUI login manager - change to service run. so other programs can a dependent service too
       };
     };
   };

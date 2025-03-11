@@ -10,7 +10,7 @@ in
     };
     hyprconfig = lib.mkOption {
       default = "~/.config/hypr/hyprland.config";
-    }
+    };
   };
 
   config = lib.mkIf cfg.enable {

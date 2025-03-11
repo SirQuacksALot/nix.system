@@ -12,7 +12,7 @@
 
 </div>
 
-This is my approche to NixOs. This repo holds the the nixos config for my personal machine, used for work. This repo will additionaly will be used as the documentation of said configurations. This project is inspired by [HeinzDev NixOS Dotfiles](https://github.com/HeinzDev/Hyprland-dotfiles/tree/main).
+This is my approche to NixOs. This repo holds the the nixos config for my personal machine, used for work. This repo will additionaly will be used as the documentation of said configurations. This project is inspired by [HeinzDev NixOS Dotfiles](https://github.com/HeinzDev/Hyprland-dotfiles/tree/main) and [JaKootLit's NixOS Hyprland](https://github.com/JaKooLit/NixOS-Hyprland/tree/main?tab=readme-ov-file).
 
 ## System info 💻
 

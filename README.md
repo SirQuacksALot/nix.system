@@ -35,7 +35,7 @@ git clone https://github.com/SirQuacksALot/nix.system.git
 build your system with the flake of the repo (the host name can be set inside the flake)
 
 ```bash
-nixos-rebuild switch --flake .#xps13
+nixos-rebuild switch --use-remote-sudo --flake .#xps13 
 ```
 
 ## System info 💻

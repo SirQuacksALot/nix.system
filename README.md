@@ -11,11 +11,32 @@
 
 <br>
 
-# SirQuacksALot NixOs Dotfiles
+# SirQuacksALot NixOs System Config
+simple all around nixos configuration
+
+<br>
+
+![where is the screenshot 🤔]()
+
+<br>
 
 </div>
 
 This is my approche to NixOs. This repo holds the the nixos config for my personal machine, used for work. This repo will additionaly will be used as the documentation of said configurations. This project is inspired by [HeinzDev NixOS Dotfiles](https://github.com/HeinzDev/Hyprland-dotfiles/tree/main) and [JaKootLit's NixOS Hyprland](https://github.com/JaKooLit/NixOS-Hyprland/tree/main?tab=readme-ov-file).
+
+## Getting started 🚀
+
+clone the repoisitory via
+
+```bash
+git clone https://github.com/SirQuacksALot/nix.system.git
+```
+
+build your system with the flake of the repo (the host name can be set inside the flake)
+
+```bash
+nixos-rebuild switch --flake .#xps13
+```
 
 ## System info 💻
 
@@ -24,6 +45,11 @@ This is my approche to NixOs. This repo holds the the nixos config for my person
 ![gpu](https://img.shields.io/badge/GPU-Intel_Alder_Lake--UP4_GT2_[Iris_Xe_Graphics]-gray?logo=intel&logoColor=fff&labelColor=0071C5&style=flat-square)  
 ![ram](https://img.shields.io/badge/RAM-7569Mi_(8_GiB)-gray?logo=intel&logoColor=fff&labelColor=0071C5&style=flat-square)  
 
+## Documentation 🪴
+
+There is nothing here ? Yet ... 😺
+
+<!---
 ## Directory Structure 📁
 
 ```none
@@ -44,6 +70,7 @@ This is my approche to NixOs. This repo holds the the nixos config for my person
 ├──flake.lock
 └──README.md
 ```
+-->
 
 <div align=center>
 

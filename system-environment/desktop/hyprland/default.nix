@@ -318,4 +318,19 @@ in
     username = username;
     hyprconfig = hyprconfig;
   };
+
+  systemd.user.services.hyprlandsession = {
+    enable = true;
+    description = "Run a hyprland session with a specific config";
+
+    unitConfig = {
+      Type = "simple";
+    };
+
+    serviceConfig = {
+      ExecStart = "Hyprland -c ${hyprconfig}";
+    };
+
+    wantedBy = [ "multi-user.target" ];
+  }
 }

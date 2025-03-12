@@ -12,7 +12,7 @@
 <br>
 
 # SirQuacksALot NixOs System Config
-simple all around nixos configuration
+orderly all around nixos configuration
 
 <br>
 

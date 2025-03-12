@@ -29,6 +29,8 @@ in
       packages = with pkgs; [
         # ...
         lsd
+        fzf
+        fzf-zsh
       ];
     };
 

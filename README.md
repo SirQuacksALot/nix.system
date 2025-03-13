@@ -48,7 +48,7 @@ nixos-rebuild switch --use-remote-sudo --flake .#xps13
 There is nothing here ? Yet ... 😺
 
 <!---
-## Directory Structure 📁
+### Directory Structure 📁
 
 ```none
 ├──home

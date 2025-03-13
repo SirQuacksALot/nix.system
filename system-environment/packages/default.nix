@@ -19,5 +19,6 @@ in
     pciutils      # pci inspection and manipulation
     wget          # retrive files via https, http and ftp
     python314     # python programming language
+    fastfetch     # cli system info fetcher
   ]) ++  [ python-packages ];
 }

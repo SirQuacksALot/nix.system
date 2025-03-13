@@ -50,7 +50,8 @@ let
 
     # exec-once = $terminal
     # exec-once = nm-applet &
-    # exec-once = waybar & hyprpaper & firefox
+    exec-once = waybar
+    exec-once = swww init
 
 
     #############################
@@ -305,6 +306,7 @@ in
     ./drivers
     ./services
     ./programs
+    ./packages
   ];
 
   programs.hyprland = {
@@ -317,20 +319,5 @@ in
     enable = true;
     username = username;
     hyprconfig = hyprconfig;
-  };
-
-  systemd.user.services.hyprlandsession = {
-    enable = true;
-    description = "Run a hyprland session with a specific config";
-
-    unitConfig = {
-      Type = "simple";
-    };
-
-    serviceConfig = {
-      ExecStart = "Hyprland -c ${hyprconfig}";
-    };
-
-    wantedBy = [ "multi-user.target" ];
   };
 }

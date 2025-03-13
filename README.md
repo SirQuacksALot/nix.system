@@ -14,7 +14,7 @@
 <br>
 
 # SirQuacksALot NixOs System Config
-all around nixos configuration
+an all around nixos configuration
 
 <br>
 

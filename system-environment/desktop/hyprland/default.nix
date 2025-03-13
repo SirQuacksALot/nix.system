@@ -52,6 +52,7 @@ let
     # exec-once = nm-applet &
     exec-once = waybar
     exec-once = swww init
+    exec-once = discord
 
 
     #############################

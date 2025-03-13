@@ -1,4 +1,4 @@
-{ pkgs, nixpkgsUnstable, ... }: 
+{ pkgs, ... }: 
 
 let
   python-packages = pkgs.python3.withPackages (

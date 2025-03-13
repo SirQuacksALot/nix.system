@@ -22,7 +22,7 @@ orderly all around nixos configuration
 
 </div>
 
-This is my approche to NixOs. This repo holds the the nixos config for my personal machine, used for work. This repo will additionaly will be used as the documentation of said configurations. This project is inspired by [HeinzDev NixOS Dotfiles](https://github.com/HeinzDev/Hyprland-dotfiles/tree/main) and [JaKootLit's NixOS Hyprland](https://github.com/JaKooLit/NixOS-Hyprland/tree/main?tab=readme-ov-file).
+This is my approche to NixOs. This repo holds the the nixos config for my personal machine, used for work. This repo additionaly will be used as the documentation of said configurations. This project is inspired by [HeinzDev NixOS Dotfiles](https://github.com/HeinzDev/Hyprland-dotfiles/tree/main) and [JaKootLit's NixOS Hyprland](https://github.com/JaKooLit/NixOS-Hyprland/tree/main?tab=readme-ov-file).
 
 > [!IMPORTANT]
 >As this is a personal project I will not accept any push requests. You may use this repo as reference for your own projects but there will be no contributers other then me, the author.

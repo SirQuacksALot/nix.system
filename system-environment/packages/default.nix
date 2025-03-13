@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, nixpkgsUnstable, ... }: 
 
 let
   python-packages = pkgs.python3.withPackages (
@@ -20,5 +20,9 @@ in
     wget          # retrive files via https, http and ftp
     python314     # python programming language
     fastfetch     # cli system info fetcher
-  ]) ++  [ python-packages ];
+  ]) ++  
+  [ 
+    python-packages
+    nixpkgsUnstable.warp-terminal
+  ];
 }

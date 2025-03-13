@@ -289,19 +289,17 @@ let
     # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
 
     # Example windowrule v1
-    # windowrule = float, ^(kitty)$
+    windowrule = float, ^(kitty)$
 
     # Example windowrule v2
-    # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+    windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+    windowrulev2 = size 800 400,class:^(kitty)$,title:^(kitty)$
 
     # Ignore maximize requests from apps. You'll probably like this.
     windowrulev2 = suppressevent maximize, class:.*
 
     # Fix some dragging issues with XWayland
     windowrulev2 = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
-
-    # enable debugging
-    debug:disable_logs = true
   '';
 in
 {

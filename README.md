@@ -43,13 +43,6 @@ build your system with the flake of the repo (the host name can be set inside th
 nixos-rebuild switch --use-remote-sudo --flake .#xps13 
 ```
 
-## System info 💻
-
-![vendor](https://img.shields.io/badge/MODEL-dell_xps13_9315-gray?logo=dell&logoColor=fff&labelColor=0071C5&style=flat-square)  
-![cpu](https://img.shields.io/badge/CPU-12th_Gen_Intel_i5--1230U_(12)_@_4._00GHz-gray?logo=intel&logoColor=fff&labelColor=0071C5&style=flat-square)  
-![gpu](https://img.shields.io/badge/GPU-Intel_Alder_Lake--UP4_GT2_[Iris_Xe_Graphics]-gray?logo=intel&logoColor=fff&labelColor=0071C5&style=flat-square)  
-![ram](https://img.shields.io/badge/RAM-7569Mi_(8_GiB)-gray?logo=intel&logoColor=fff&labelColor=0071C5&style=flat-square)  
-
 ## Documentation 🪴
 
 There is nothing here ? Yet ... 😺
@@ -76,6 +69,13 @@ There is nothing here ? Yet ... 😺
 └──README.md
 ```
 -->
+
+### System info 💻
+
+![vendor](https://img.shields.io/badge/MODEL-dell_xps13_9315-gray?logo=dell&logoColor=fff&labelColor=0071C5&style=flat-square)  
+![cpu](https://img.shields.io/badge/CPU-12th_Gen_Intel_i5--1230U_(12)_@_4._00GHz-gray?logo=intel&logoColor=fff&labelColor=0071C5&style=flat-square)  
+![gpu](https://img.shields.io/badge/GPU-Intel_Alder_Lake--UP4_GT2_[Iris_Xe_Graphics]-gray?logo=intel&logoColor=fff&labelColor=0071C5&style=flat-square)  
+![ram](https://img.shields.io/badge/RAM-7569Mi_(8_GiB)-gray?logo=intel&logoColor=fff&labelColor=0071C5&style=flat-square)  
 
 <div align=center>
 

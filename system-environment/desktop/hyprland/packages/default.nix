@@ -27,7 +27,8 @@
     libsForQt5.qtstyleplugin-kvantum  # theme engine - svg based for qt5
     nwg-displays                      # output manager for hyprland
     nwg-look                          # editor for wayland env's -gtk3
-    nvtopPackages                     # task monitor for GPU's - htop like
+    # nvtopPackages                     # task monitor for GPU's - htop like
+    nautilus                          # file viewer
     pamixer                           # pulse audio mixer
     pavucontrol                       # pulse audio controler
     playerctl                         # media player controler

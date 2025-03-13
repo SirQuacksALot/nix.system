@@ -6,7 +6,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixos-hardware.url = "github:Nixos/nixos-hardware/master";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:pneumaea/zen-browser-flake";
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
   };
 

@@ -7,6 +7,7 @@
     ./postman
     ./keepassxc
     ./discord
+    ./obsidian
     # ./android-studio
   ];
 }

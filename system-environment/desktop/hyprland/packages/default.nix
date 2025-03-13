@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     bc              # clac software
     glib            # dependeci for gsettings

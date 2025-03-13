@@ -27,10 +27,18 @@
         inherit system;
         config.allowUnfree = true;
         config.android_sdk.accept_license = true;
+        overlays = [
+          (final: _: {
+            unstable = import nixpkgsUnstable {
+              inherit (final.stdenv.hostPlatform) system;
+              inherit (final) config;
+            };
+          })
+        ];
       };
 
       # Arguments to inherit to all modules
-      specialArgs = { inherit system inputs username host nixpkgsUnstable; };
+      specialArgs = { inherit system inputs username host; };
 
       # Module import list
       modules = [

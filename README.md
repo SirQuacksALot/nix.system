@@ -10,7 +10,6 @@
 
 [![LatestCommits](https://img.shields.io/github/last-commit/SirQuacksALot/nix.dotfiles?color=809fdf&logo=github&logoColor=809fdf&style=flat-square)](https://github.com/SirQuacksALot/nix.dotfiles/activity) [![RepoSize](https://img.shields.io/github/repo-size/SirQuacksALot/nix.dotfiles?color=809fdf&logo=github&logoColor=809fdf&style=flat-square)](https://github.com/SirQuacksALot/nix.dotfiles)
 
-
 <br>
 
 # SirQuacksALot NixOs System Config

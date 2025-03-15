@@ -1,5 +1,5 @@
 let 
-  inherit (import ./waybar) config styles;
+  inherit (import ./waybar.nix) config styles;
   waybar_config = builtins.toFile "conf" config;
   waybar_styles = builtins.toFile "styles.css" styles;
 in

@@ -1,3 +1,8 @@
+let 
+  inherit (import ./waybar) config styles;
+  waybar_config = builtins.toFile "conf" config;
+  waybar_styles = builtins.toFile "styles.css" styles;
+in
 {
   config = ''
     # #######################################################################################
@@ -49,7 +54,7 @@
 
     # exec-once = $terminal
     # exec-once = nm-applet &
-    exec-once = waybar
+    exec-once = waybar -c ${waybar_config} -s ${waybar_styles}
     exec-once = swww init
     exec-once = discord --start-minimized
 

@@ -226,7 +226,7 @@ in
     bind = $mainMod, E, exec, $fileManager
     bind = $mainMod, V, togglefloating,
     bind = $mainMod, R, exec, $menu
-    bind = $mainMod, P, pseudo, # dwindle
+    # bind = $mainMod, P, pseudo, # dwindle
     bind = $mainMod, J, togglesplit, # dwindle
 
     # Color Picker

@@ -18,7 +18,7 @@
         "margin-left": 10,
 
         "modules-left": [
-            "custom/poweroff",
+            "group/powermenu",
             "hyprland/workspaces"
         ],
         "modules-center": [
@@ -137,10 +137,57 @@
             "on-click": "pavucontrol"
         },
 
+        "group/powermenu": {
+            "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "transition-left-to-right": true
+            },
+            "modules": [
+                "custom/poweroff",
+                "custom/suspend",
+                "custom/reboot",
+                "custom/logout",
+                "custom/hybernate",
+                "custom/lock"
+            ]
+        },
+
         "custom/poweroff": {
             "tooltip": false,
             "format": " ",
-            "on-click": ""
+            "on-click": "shutdown -h now",
+            "tooltip-format": "Power Menu"
+        },
+
+        "custom/suspend": {
+            "tooltip": false,
+            "format": " ",
+            "on-click": "suspend"
+        },
+
+        "custom/reboot": {
+            "tooltip": false,
+            "format": " ",
+            "on-click": "reboot"
+        },
+
+        "custom/logout": {
+            "tooltip": false,
+            "format": "󰍃",
+            "on-click": "logout"
+        },
+
+        "custom/hybernate": { 
+            "tooltip": false,
+            "format": "󰒲",
+            "on-click": "hybernate"
+        },
+
+        "custom/lock": {
+            "tooltip": false,
+            "format": " ",
+            "on-click": "lock"
         },
 
         "power-profiles-daemon": {
@@ -236,11 +283,14 @@
     #pulseaudio,
     #temperature,
     #power-profiles-daemon,
-    #custom-poweroff {
+    #custom-poweroff,
+    #custom-logout,
+    #custom-lock,
+    #custom-hybernate,
+    #custom-suspend {
         padding-left: 10px;
         padding-right: 10px;
     }
-
 
     /* -----------------------------------------------------------------------------
     * Module styles
@@ -332,11 +382,20 @@
 
     #custom-poweroff {
         color: #c9545d;
-    }
-
-    #custom-poweroff:hover {
+    
+    
+    }#custom-poweroff:hover {
         color: red;
     }
+
+   #group-powermenu {
+    margin: 0px;
+    padding: 0px;
+   }
+
+    /* #custom-poweroff:hover {
+        color: red;
+    }*/
 
     #window {
         font-weight: bold;

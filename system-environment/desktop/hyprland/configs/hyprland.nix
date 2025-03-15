@@ -309,8 +309,8 @@ in
     windowrulev2 = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
 
     # Map workspaces to monitors
-    workspace = 1, monitor:eDP-1, monitor:true, persistent:true
-    workspace = 2, monitor:DP-7, monitor:true, persistent:true
-    workspace = 3, monitor:DVI-I-1, monitor:true, persistent:true
+    workspace = 1, monitor:eDP-1, monitor:true
+    workspace = 2, monitor:DP-7, monitor:true
+    workspace = 3, monitor:DVI-I-1, monitor:true
   '';
 }

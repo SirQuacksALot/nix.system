@@ -330,8 +330,12 @@
         color: red;
     }
 
-    #tray {
-        /* No styles */
+    #custom-poweroff {
+        color: #c9545d;
+    }
+
+    #custom-poweroff:hover {
+        color: red;
     }
 
     #window {

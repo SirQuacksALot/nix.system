@@ -112,32 +112,56 @@
             "all-outputs": false,
             "disable-scroll": true,
             "format": "{icon}",
+            "persistent_workspaces": {
+                "1": [],
+                "2": [],
+                "3": [],
+            },
             "format-icons": {
-                "1": "󰌢 ", // Icon: firefox-browser
-                "2": "󰍹 ", // Icon: mail
-                "3": "󰍹 ", // Icon: code
+                "1": "󰌢 ",
+                "2": "󰍹 ",
+                "3": "󰍹 ",
                 "urgent": " ",
                 "focused": " ",
                 "default": " "
             }
         },
 
-        //"pulseaudio": {
-        //    //"scroll-step": 1,
-        //    "format": "{icon}  {volume}%",
-        //    "format-bluetooth": "{icon}  {volume}% ",
-        //    "format-muted": "",
-        //    "format-icons": {
-        //        "headphones": " ",
-        //        "handsfree": "",
-        //        "headset": "",
-        //        "phone": " ",
-        //        "portable": " ",
-        //        "car": " ",
-        //        "default": [" ", " "]
-        //    },
-        //    "on-click": "pavucontrol"
-        //},
+        "pulseaudio": {
+            "scroll-step": 1,
+            "format": "{icon} {volume}%{format_source}",
+            "format-bluetooth": "{icon} {volume}%{format_source}",
+            "format-bluetooth-muted": "  {icon}{format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "   {volume}%",
+            "format-source-muted": "  ",
+            "format-icons": {
+                "headphone": " ",
+                "phone": " ",
+                "portable": " ",
+                "car": " ",
+                "default": ["", " ", " "]
+            },
+            "on-click": "pavucontrol"
+        },
+
+        "custom/poweroff": {
+            "tooltip": false,
+            "format": " ",
+            "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
+        },
+
+        "power-profiles-daemon": {
+            "format": "{icon}",
+            "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+            "tooltip": true,
+            "format-icons": {
+                "default": "",
+                "performance": "",
+                "balanced": " ",
+                "power-saver": " "
+            },
+        },
 
         "temperature": {
         "critical-threshold": 80,

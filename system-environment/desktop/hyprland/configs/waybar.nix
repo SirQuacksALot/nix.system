@@ -111,13 +111,11 @@
         "hyprland/workspaces": {
             "all-outputs": false,
             "disable-scroll": true,
-            "format": "{icon} {name}",
+            "format": "{icon}",
             "format-icons": {
-                "1:www": "龜", // Icon: firefox-browser
-                "2:mail": " ", // Icon: mail
-                "3:editor": " ", // Icon: code
-                "4:terminals": " ", // Icon: terminal
-                "5:portal": " ", // Icon: terminal
+                "1": "󰌢 ", // Icon: firefox-browser
+                "2": "󰍹 ", // Icon: mail
+                "3": "󰍹 ", // Icon: code
                 "urgent": " ",
                 "focused": " ",
                 "default": " "

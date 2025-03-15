@@ -229,6 +229,9 @@ in
     bind = $mainMod, P, pseudo, # dwindle
     bind = $mainMod, J, togglesplit, # dwindle
 
+    # Color Picker
+    bind = $mainMod, P, exec, hyprpicker
+
     # Move focus with mainMod + arrow keys
     bind = $mainMod, left, movefocus, l
     bind = $mainMod, right, movefocus, r

@@ -17,7 +17,7 @@ an all around nixos configuration
 
 <br>
 
-![where is the screenshot 🤔](current_state_screenshot.png)
+![where is the screenshot 🤔](system_showcase.png)
 
 <br>
 

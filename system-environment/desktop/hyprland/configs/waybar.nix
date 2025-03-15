@@ -43,15 +43,15 @@
                 "critical": 15
             },
             // Connected to AC
-            "format": "  {icon}  {capacity}%", // Icon: bolt
+            "format": "  {capacity}  {icon}%", // Icon: bolt
             // Not connected to AC
-            "format-discharging": "{icon}  {capacity}%",
+            "format-discharging": "{capacity}  {icon}%",
             "format-icons": [
-                "", // Icon: battery-full
-                "", // Icon: battery-three-quarters
-                "", // Icon: battery-half
-                "", // Icon: battery-quarter
-                ""  // Icon: battery-empty
+                " ", // Icon: battery-full
+                " ", // Icon: battery-three-quarters
+                " ", // Icon: battery-half
+                " ", // Icon: battery-quarter
+                " "  // Icon: battery-empty
             ],
             "tooltip": true
         },
@@ -64,13 +64,13 @@
 
         "clock#date": {
         "interval": 10,
-        "format": "  {:%e %b %Y}", // Icon: calendar-alt
+        "format": "   {:%e %b %Y}", // Icon: calendar-alt
         "tooltip-format": "{:%e %B %Y}"
         },
 
         "cpu": {
             "interval": 5,
-            "format": "  {usage}% ({load})", // Icon: microchip
+            "format": "   {usage}% ({load})", // Icon: microchip
             "states": {
             "warning": 70,
             "critical": 90
@@ -81,7 +81,7 @@
         "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
         // Interval set only as a fallback, as the value is updated by signal
         "interval": 30,
-        "format": "  {}", // Icon: keyboard
+        "format": "   {}", // Icon: keyboard
         // Signal sent by Sway key binding (~/.config/sway/key-bindings)
         "signal": 1, // SIGHUP
         "tooltip": false
@@ -89,7 +89,7 @@
 
         "memory": {
             "interval": 5,
-            "format": "  {}%", // Icon: memory
+            "format": "   {}%", // Icon: memory
             "states": {
                 "warning": 70,
                 "critical": 90
@@ -99,50 +99,50 @@
         "network": {
             "interval": 5,
             "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-            "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+            "format-ethernet": "󰈀   {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
             "format-disconnected": "⚠  Disconnected",
             "tooltip-format": "{ifname}: {ipaddr}"
         },
 
-        "sway/mode": {
-            "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+        "hyperland/mode": {
+            "format": "<span style=\"italic\">   {}</span>", // Icon: expand-arrows-alt
             "tooltip": false
         },
 
-        "sway/window": {
+        "hyperland/window": {
             "format": "{}",
             "max-length": 120
         },
 
-        "sway/workspaces": {
+        "hyperland/workspaces": {
             "all-outputs": false,
             "disable-scroll": true,
             "format": "{icon} {name}",
             "format-icons": {
                 "1:www": "龜", // Icon: firefox-browser
-                "2:mail": "", // Icon: mail
-                "3:editor": "", // Icon: code
-                "4:terminals": "", // Icon: terminal
-                "5:portal": "", // Icon: terminal
-                "urgent": "",
-                "focused": "",
-                "default": ""
+                "2:mail": " ", // Icon: mail
+                "3:editor": " ", // Icon: code
+                "4:terminals": " ", // Icon: terminal
+                "5:portal": " ", // Icon: terminal
+                "urgent": " ",
+                "focused": " ",
+                "default": " "
             }
         },
 
         //"pulseaudio": {
         //    //"scroll-step": 1,
         //    "format": "{icon}  {volume}%",
-        //    "format-bluetooth": "{icon}  {volume}%",
+        //    "format-bluetooth": "{icon}  {volume}% ",
         //    "format-muted": "",
         //    "format-icons": {
-        //        "headphones": "",
+        //        "headphones": " ",
         //        "handsfree": "",
         //        "headset": "",
-        //        "phone": "",
-        //        "portable": "",
-        //        "car": "",
-        //        "default": ["", ""]
+        //        "phone": " ",
+        //        "portable": " ",
+        //        "car": " ",
+        //        "default": [" ", " "]
         //    },
         //    "on-click": "pavucontrol"
         //},

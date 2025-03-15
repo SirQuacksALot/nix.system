@@ -83,7 +83,7 @@ in
         border_size = 1
 
         # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+        col.active_border = rgb(fff) # rgba(33ccffee) rgba(00ff99ee) 45deg
         col.inactive_border = rgba(595959aa)
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
@@ -101,14 +101,13 @@ in
 
         # Change transparency of focused and unfocused windows
         active_opacity = 1.0
-        inactive_opacity = 1.0
+        inactive_opacity = 0.95
 
         shadow {
             enabled = true
             range = 4
             render_power = 3
-            # color = rgba(1a1a1aee)
-            color = rgb(fff)
+            color = rgba(1a1a1aee)
         }
 
         # https://wiki.hyprland.org/Configuring/Variables/#blur
@@ -196,13 +195,13 @@ in
         sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 
         touchpad {
-            natural_scroll = false
+            natural_scroll = true
         }
     }
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
     gestures {
-        workspace_swipe = false
+        workspace_swipe = true
     }
 
     # Example per-device config

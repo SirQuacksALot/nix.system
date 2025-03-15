@@ -13,18 +13,17 @@
         "height": 30,
 
         "modules-left": [
-            "sway/workspaces",
-            "sway/mode"
+            "hyprland/workspaces",
+            "hyprland/mode"
         ],
         "modules-center": [
-            "sway/window"
+            "hyprland/window"
         ],
         "modules-right": [
             "network",
             "memory",
             "cpu",
             "temperature",
-            "custom/keyboard-layout",
             "battery",
             "tray",
             "clock#date",
@@ -77,16 +76,6 @@
             }
         },
 
-        "custom/keyboard-layout": {
-        "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-        // Interval set only as a fallback, as the value is updated by signal
-        "interval": 30,
-        "format": "   {}", // Icon: keyboard
-        // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-        "signal": 1, // SIGHUP
-        "tooltip": false
-        },
-
         "memory": {
             "interval": 5,
             "format": "   {}%", // Icon: memory
@@ -104,17 +93,17 @@
             "tooltip-format": "{ifname}: {ipaddr}"
         },
 
-        "hyperland/mode": {
+        "hyprland/mode": {
             "format": "<span style=\"italic\">   {}</span>", // Icon: expand-arrows-alt
             "tooltip": false
         },
 
-        "hyperland/window": {
+        "hyprland/window": {
             "format": "{}",
             "max-length": 120
         },
 
-        "hyperland/workspaces": {
+        "hyprland/workspaces": {
             "all-outputs": false,
             "disable-scroll": true,
             "format": "{icon} {name}",

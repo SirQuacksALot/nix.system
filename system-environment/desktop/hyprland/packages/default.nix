@@ -44,5 +44,6 @@
     wlogout                           # logout menu for wayland
     xarchiver                         # gtk forntend for zip, tar, ...
     yad                               # gui dialog for shell scrips
+    hyprpicker                        # hyprland color picker
   ];
 }

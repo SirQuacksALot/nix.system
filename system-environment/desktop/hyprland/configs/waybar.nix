@@ -1,259 +1,360 @@
 {
   config = ''
-      {
-          "layer": "top", // Waybar at top layer
-          "position": "top", // Waybar position (top|bottom|left|right)
-          "height": 32, // Waybar height
-          // "width": 120, // Waybar width
-          // Choose the order of the modules
-          "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-          "modules-center": ["sway/window"],
-          "modules-right": ["tray","pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2", "clock"],
-          // Modules configuration
-          "sway/workspaces": {
-              "disable-scroll": true,
-              "disable-markup" : false,
-              "all-outputs": true,
-              "format": "  {icon}  ",
-              //"format":"{icon}",
-              "format-icons": {
-                  "1": "",
-                  "2": "",
-                  "3": "",
-                  "10": "",
-                  "4": "",
-                  "5": "",
-                  "focused": "",
-                  "default": ""
-              }
-          },
-          "sway/mode": {
-              "format": "<span style=\"italic\">{}</span>"
-          },
-          "idle_inhibitor": {
-              "format": "{icon}",
-              "format-icons": {
-                  "activated": "",
-                  "deactivated": ""
-              }
-          },
-          "tray": {
-              "icon-size": 21,
-              "spacing": 10
-          },
-          "clock": {
-              "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-              "format-alt": "{:%Y-%m-%d}"
-          },
-          "cpu": {
-              "format": "{usage}% "
-          },
-          "memory": {
-              "format": "{}% "
-          },
-          "temperature": {
-              // "thermal-zone": 2,
-              // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-              "critical-threshold": 80,
-              // "format-critical": "{temperatureC}°C ",
-              "format": "{temperatureC}°C "
-          },
-          "backlight": {
-              // "device": "acpi_video1",
-              "format": "{percent}% {icon}",
-              "states": [0,50],
-              "format-icons": ["", ""]
-          },
-          "battery": {
-              "states": {
-                  "good": 95,
-                  "warning": 30,
-                  "critical": 15
-              },
-              "format": "{capacity}% {icon}",
-              // "format-good": "", // An empty format will hide the module
-              // "format-full": "",
-              "format-icons": ["", "", "", "", ""]
-          },
-          "battery#bat2": {
-              "bat": "BAT2"
-          },
-          "network": {
-              // "interface": "wlp2s0", // (Optional) To force the use of this interface
-              "format-wifi": "{essid} ({signalStrength}%) ",
-              "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-              "format-disconnected": "Disconnected ⚠",
-              "interval" : 7
-          },
-          "pulseaudio": {
-              //"scroll-step": 1,
-              "format": "{volume}% {icon}",
-              "format-bluetooth": "{volume}% {icon}",
-              "format-muted": "",
-              "format-icons": {
-                  "headphones": "",
-                  "handsfree": "",
-                  "headset": "",
-                  "phone": "",
-                  "portable": "",
-                  "car": "",
-                  "default": ["", ""]
-              },
-              "on-click": "pavucontrol"
-          },
-          "custom/media": {
-              "format": "{icon} {}",
-              "return-type": "json",
-              "max-length": 40,
-              "format-icons": {
-                  "spotify": "",
-                  "default": "🎜"
-              },
-              "escape": true,
-              "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-          }
-      }
+    {
+        // -------------------------------------------------------------------------
+        // Global configuration
+        // -------------------------------------------------------------------------
+
+        "layer": "top",
+
+        "position": "top",
+
+        // If height property would be not present, it'd be calculated dynamically
+        "height": 30,
+
+        "modules-left": [
+            "sway/workspaces",
+            "sway/mode"
+        ],
+        "modules-center": [
+            "sway/window"
+        ],
+        "modules-right": [
+            "network",
+            "memory",
+            "cpu",
+            "temperature",
+            "custom/keyboard-layout",
+            "battery",
+            "tray",
+            "clock#date",
+            "clock#time"
+        ],
+
+
+        // -------------------------------------------------------------------------
+        // Modules
+        // -------------------------------------------------------------------------
+
+        "battery": {
+            "interval": 10,
+            "states": {
+                "warning": 30,
+                "critical": 15
+            },
+            // Connected to AC
+            "format": "  {icon}  {capacity}%", // Icon: bolt
+            // Not connected to AC
+            "format-discharging": "{icon}  {capacity}%",
+            "format-icons": [
+                "", // Icon: battery-full
+                "", // Icon: battery-three-quarters
+                "", // Icon: battery-half
+                "", // Icon: battery-quarter
+                ""  // Icon: battery-empty
+            ],
+            "tooltip": true
+        },
+
+        "clock#time": {
+            "interval": 1,
+            "format": "{:%H:%M:%S}",
+            "tooltip": false
+        },
+
+        "clock#date": {
+        "interval": 10,
+        "format": "  {:%e %b %Y}", // Icon: calendar-alt
+        "tooltip-format": "{:%e %B %Y}"
+        },
+
+        "cpu": {
+            "interval": 5,
+            "format": "  {usage}% ({load})", // Icon: microchip
+            "states": {
+            "warning": 70,
+            "critical": 90
+            }
+        },
+
+        "custom/keyboard-layout": {
+        "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+        // Interval set only as a fallback, as the value is updated by signal
+        "interval": 30,
+        "format": "  {}", // Icon: keyboard
+        // Signal sent by Sway key binding (~/.config/sway/key-bindings)
+        "signal": 1, // SIGHUP
+        "tooltip": false
+        },
+
+        "memory": {
+            "interval": 5,
+            "format": "  {}%", // Icon: memory
+            "states": {
+                "warning": 70,
+                "critical": 90
+            }
+        },
+
+        "network": {
+            "interval": 5,
+            "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
+            "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+            "format-disconnected": "⚠  Disconnected",
+            "tooltip-format": "{ifname}: {ipaddr}"
+        },
+
+        "sway/mode": {
+            "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+            "tooltip": false
+        },
+
+        "sway/window": {
+            "format": "{}",
+            "max-length": 120
+        },
+
+        "sway/workspaces": {
+            "all-outputs": false,
+            "disable-scroll": true,
+            "format": "{icon} {name}",
+            "format-icons": {
+                "1:www": "龜", // Icon: firefox-browser
+                "2:mail": "", // Icon: mail
+                "3:editor": "", // Icon: code
+                "4:terminals": "", // Icon: terminal
+                "5:portal": "", // Icon: terminal
+                "urgent": "",
+                "focused": "",
+                "default": ""
+            }
+        },
+
+        //"pulseaudio": {
+        //    //"scroll-step": 1,
+        //    "format": "{icon}  {volume}%",
+        //    "format-bluetooth": "{icon}  {volume}%",
+        //    "format-muted": "",
+        //    "format-icons": {
+        //        "headphones": "",
+        //        "handsfree": "",
+        //        "headset": "",
+        //        "phone": "",
+        //        "portable": "",
+        //        "car": "",
+        //        "default": ["", ""]
+        //    },
+        //    "on-click": "pavucontrol"
+        //},
+
+        "temperature": {
+        "critical-threshold": 80,
+        "interval": 5,
+        "format": "{icon}  {temperatureC}°C",
+        "format-icons": [
+            "", // Icon: temperature-empty
+            "", // Icon: temperature-quarter
+            "", // Icon: temperature-half
+            "", // Icon: temperature-three-quarters
+            ""  // Icon: temperature-full
+        ],
+        "tooltip": true
+        },
+
+        "tray": {
+            "icon-size": 21,
+            "spacing": 10
+        }
+
+    }
   '';
 
   styles = ''
-    * {
-        border: none;
-        border-radius: 0;
-        font-family: Roboto,'Font Awesome 5', 'SFNS Display',  Helvetica, Arial, sans-serif;
-        font-size: 13px;
-        min-height: 0;
-    }
+    /* -----------------------------------------------------------------------------
+    * Keyframes
+    * -------------------------------------------------------------------------- */
 
-    window#waybar {
-        background: rgba(43, 48, 59, 0.5);
-        border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-        color: #ffffff;
-    }
+    @keyframes blink-warning {
+        70% {
+            color: white;
+        }
 
-    window#waybar.hidden {
-        opacity: 0.0;
-    }
-    /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-    #workspaces button {
-        padding: 0 5px;
-        background: transparent;
-        color: #ffffff;
-        border-bottom: 3px solid transparent;
-    }
-
-    #workspaces button.focused {
-        background: #64727D;
-        border-bottom: 3px solid #ffffff;
-    }
-
-    #workspaces button.urgent {
-        background-color: #eb4d4b;
-    }
-
-    #mode {
-        background: #64727D;
-        border-bottom: 3px solid #ffffff;
-    }
-
-    #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
-        padding: 0 10px;
-        margin: 0 5px;
-    }
-
-    #clock {
-        background-color: #64727D;
-    }
-
-    #battery {
-        background-color: #ffffff;
-        color: #000000;
-    }
-
-    #battery.charging {
-        color: #ffffff;
-        background-color: #26A65B;
-    }
-
-    @keyframes blink {
         to {
-            background-color: #ffffff;
-            color: #000000;
+            color: white;
+            background-color: orange;
         }
     }
 
-    #battery.critical:not(.charging) {
-        background: #f53c3c;
-        color: #ffffff;
-        animation-name: blink;
-        animation-duration: 0.5s;
+    @keyframes blink-critical {
+        70% {
+        color: white;
+        }
+
+        to {
+            color: white;
+            background-color: red;
+        }
+    }
+
+
+    /* -----------------------------------------------------------------------------
+    * Base styles
+    * -------------------------------------------------------------------------- */
+
+    /* Reset all styles */
+    * {
+        border: none;
+        border-radius: 0;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* The whole bar */
+    #waybar {
+        background: #323232;
+        color: white;
+        font-family: Cantarell, Noto Sans, sans-serif;
+        font-size: 13px;
+    }
+
+    /* Each module */
+    #battery,
+    #clock,
+    #cpu,
+    #custom-keyboard-layout,
+    #memory,
+    #mode,
+    #network,
+    #pulseaudio,
+    #temperature,
+    #tray {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    /* -----------------------------------------------------------------------------
+    * Module styles
+    * -------------------------------------------------------------------------- */
+
+    #battery {
         animation-timing-function: linear;
         animation-iteration-count: infinite;
         animation-direction: alternate;
     }
 
+    #battery.warning {
+        color: orange;
+    }
+
+    #battery.critical {
+        color: red;
+    }
+
+    #battery.warning.discharging {
+        animation-name: blink-warning;
+        animation-duration: 3s;
+    }
+
+    #battery.critical.discharging {
+        animation-name: blink-critical;
+        animation-duration: 2s;
+    }
+
+    #clock {
+        font-weight: bold;
+    }
+
     #cpu {
-        background: #2ecc71;
-        color: #000000;
+    /* No styles */
+    }
+
+    #cpu.warning {
+        color: orange;
+    }
+
+    #cpu.critical {
+        color: red;
     }
 
     #memory {
-        background: #9b59b6;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
     }
 
-    #backlight {
-        background: #90b1b1;
+    #memory.warning {
+        color: orange;
+    }
+
+    #memory.critical {
+        color: red;
+        animation-name: blink-critical;
+        animation-duration: 2s;
+    }
+
+    #mode {
+        background: #64727D;
+        border-top: 2px solid white;
+        /* To compensate for the top border and still have vertical centering */
+        padding-bottom: 2px;
     }
 
     #network {
-        background: #2980b9;
+        /* No styles */
     }
 
     #network.disconnected {
-        background: #f53c3c;
+        color: orange;
     }
 
     #pulseaudio {
-        background: #f1c40f;
-        color: #000000;
+        /* No styles */
     }
 
     #pulseaudio.muted {
-        background: #90b1b1;
-        color: #2a5c45;
+        /* No styles */
     }
 
-    #custom-media {
-        background: #66cc99;
-        color: #2a5c45;
-    }
-
-    .custom-spotify {
-        background: #66cc99;
-    }
-
-    .custom-vlc {
-        background: #ffa000;
+    #custom-spotify {
+        color: rgb(102, 220, 105);
     }
 
     #temperature {
-        background: #f0932b;
+        /* No styles */
     }
 
     #temperature.critical {
-        background: #eb4d4b;
+        color: red;
     }
 
     #tray {
-        background-color: #2980b9;
+        /* No styles */
     }
 
-    #idle_inhibitor {
-        background-color: #2d3436;
+    #window {
+        font-weight: bold;
     }
 
-    #idle_inhibitor.activated {
-        background-color: #ecf0f1;
-        color: #2d3436;
+    #workspaces button {
+        border-top: 2px solid transparent;
+        /* To compensate for the top border and still have vertical centering */
+        padding-bottom: 2px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #888888;
+    }
+
+    #workspaces button.focused {
+        border-color: #4c7899;
+        color: white;
+        background-color: #285577;
+    }
+
+    #workspaces button.urgent {
+        border-color: #c9545d;
+        color: #c9545d;
     }
   '';
 }

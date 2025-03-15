@@ -150,7 +150,8 @@
                 "3": "󰍹 ",
                 "urgent": " ",
                 "focused": " ",
-                "default": " "
+                "active": " ",
+                "default": " " 
             }
         },
 

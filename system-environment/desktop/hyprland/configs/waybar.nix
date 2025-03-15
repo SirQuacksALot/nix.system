@@ -205,6 +205,7 @@
         color: white;
         font-family: Cantarell, Noto Sans, sans-serif;
         font-size: 13px;
+        margine 5px;
     }
 
     /* Each module */

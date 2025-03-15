@@ -1,6 +1,6 @@
 { pkgs, username, ... }: 
 let
-  inherit (import ./config.nix) config;
+  inherit (import ./configs/hyprland.nix) config;
   hyprland_config = builtins.toFile "hyprland.conf" config;
 in
 {

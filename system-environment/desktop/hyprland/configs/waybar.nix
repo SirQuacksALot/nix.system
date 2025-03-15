@@ -219,7 +219,7 @@
 
     /* The whole bar */
     #waybar {
-        background: #323232;
+        background: #101010;
         color: white;
         font-family: Cantarell, Noto Sans, sans-serif;
         font-size: 13px;

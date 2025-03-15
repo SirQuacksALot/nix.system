@@ -139,7 +139,7 @@
 
         "custom/poweroff": {
             "tooltip": false,
-            "format": "  ",
+            "format": " ",
             "on-click": ""
         },
 
@@ -172,7 +172,7 @@
   '';
 
   styles = ''
-    /* -----------------------------------------------------------------------------
+   /* -----------------------------------------------------------------------------
     * Keyframes
     * -------------------------------------------------------------------------- */
 
@@ -223,19 +223,20 @@
         color: white;
         font-family: Cantarell, Noto Sans, sans-serif;
         font-size: 13px;
+        border: solid 0.5px #6E6E6E;
     }
 
     /* Each module */
     #battery,
     #clock,
     #cpu,
-    #custom-keyboard-layout,
     #memory,
     #mode,
     #network,
     #pulseaudio,
     #temperature,
-    #tray {
+    #power-profiles-daemon,
+    #custom-poweroff {
         padding-left: 10px;
         padding-right: 10px;
     }

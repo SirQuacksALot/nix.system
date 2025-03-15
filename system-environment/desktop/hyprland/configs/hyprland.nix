@@ -230,7 +230,7 @@ in
     bind = $mainMod, J, togglesplit, # dwindle
 
     # Color Picker
-    bind = $mainMod, P, exec, hyprpicker
+    bind = $mainMod, P, exec, hyprpicker -a
 
     # Move focus with mainMod + arrow keys
     bind = $mainMod, left, movefocus, l

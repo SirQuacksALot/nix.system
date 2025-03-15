@@ -12,6 +12,11 @@
         // If height property would be not present, it'd be calculated dynamically
         "height": 30,
 
+        "margin-top": 10,
+        "margin-right": 10,
+        "margin-bottom": 0,
+        "margin-left": 10,
+
         "modules-left": [
             "hyprland/workspaces",
             "hyprland/mode"
@@ -42,7 +47,7 @@
                 "critical": 15
             },
             // Connected to AC
-            "format": "  {capacity}  {icon}%", // Icon: bolt
+            "format": "{capacity}%  󰚥", // Icon: bolt
             // Not connected to AC
             "format-discharging": "{capacity}  {icon}%",
             "format-icons": [
@@ -57,13 +62,13 @@
 
         "clock#time": {
             "interval": 1,
-            "format": "{:%H:%M:%S}",
+            "format": "   {:%H:%M:%S}",
             "tooltip": false
         },
 
         "clock#date": {
         "interval": 10,
-        "format": "   {:%e %b %Y}", // Icon: calendar-alt
+        "format": "  {:%e %b %Y}", // Icon: calendar-alt
         "tooltip-format": "{:%e %B %Y}"
         },
 
@@ -205,7 +210,6 @@
         color: white;
         font-family: Cantarell, Noto Sans, sans-serif;
         font-size: 13px;
-        margine 5px;
     }
 
     /* Each module */
@@ -253,7 +257,7 @@
     }
 
     #clock {
-        font-weight: bold;
+        /* font-weight: bold; */
     }
 
     #cpu {

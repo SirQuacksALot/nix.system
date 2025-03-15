@@ -307,5 +307,10 @@ in
 
     # Fix some dragging issues with XWayland
     windowrulev2 = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
+
+    # Map workspaces to monitors
+    workspace = 1, eDP-1
+    workspace = 2, DP-7
+    workspace = 3, DVI-I-1
   '';
 }

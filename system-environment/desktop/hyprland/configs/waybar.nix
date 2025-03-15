@@ -18,19 +18,21 @@
         "margin-left": 10,
 
         "modules-left": [
+            "custom/poweroff",
             "hyprland/workspaces",
-            "hyprland/mode"
+            "tray"
         ],
         "modules-center": [
             "hyprland/window"
         ],
         "modules-right": [
+            "power-profiles-daemon"
+            "pulseaudio",
             "network",
-            "memory",
             "cpu",
-            "temperature",
+            "memory",
+            // "temperature",
             "battery",
-            "tray",
             "clock#date",
             "clock#time"
         ],
@@ -93,18 +95,13 @@
         "network": {
             "interval": 5,
             "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-            "format-ethernet": "󰈀   {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+            "format-ethernet": "󰈀  {ipaddr}/{cidr}", // Icon: ethernet
             "format-disconnected": "⚠  Disconnected",
             "tooltip-format": "{ifname}: {ipaddr}"
         },
 
-        "hyprland/mode": {
-            "format": "<span style=\"italic\">   {}</span>", // Icon: expand-arrows-alt
-            "tooltip": false
-        },
-
         "hyprland/window": {
-            "format": "{}",
+            "format": "  {title}",
             "max-length": 120
         },
 

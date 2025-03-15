@@ -8,6 +8,8 @@
     ./keepassxc
     ./discord
     ./obsidian
+    ./whatsapp
+    ./telegram
     # ./android-studio
   ];
 }

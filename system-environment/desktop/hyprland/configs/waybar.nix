@@ -27,12 +27,11 @@
         "modules-right": [
             "power-profiles-daemon",
             "pulseaudio",
-            "network",
+            "group/network",
             "cpu",
             "memory",
             "battery",
-            "clock#date",
-            "clock#time"
+            "group/clock"
         ],
 
 
@@ -58,6 +57,19 @@
                 " "  // Icon: battery-empty
             ],
             "tooltip": true
+        },
+
+        "group/clock": {
+            "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "transition-left-to-right": false
+            },
+            "modules": [
+                "clock#time",
+                "clock#date"
+            ]
+
         },
 
         "clock#time": {
@@ -90,11 +102,31 @@
             }
         },
 
-        "network": {
+        "group/network": {
+            "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "transition-left-to-right": true
+            },
+            "modules": [
+                "network#icons",
+                "network#text"
+            ]
+        },
+
+        "network#icons": {
             "interval": 5,
-            "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-            "format-ethernet": "󰈀  {ipaddr}/{cidr}", // Icon: ethernet
-            "format-disconnected": "⚠  Disconnected",
+            "format-wifi": " ", // Icon: wifi
+            "format-ethernet": "󰈀 ", // Icon: ethernet
+            "format-disconnected": "⚠",
+            "tooltip-format": "{ifname}: {ipaddr}"
+        },
+
+        "network#text": {
+            "interval": 5,
+            "format-wifi": "{essid} ({signalStrength}%)", // Icon: wifi
+            "format-ethernet": "{ipaddr}/{cidr}", // Icon: ethernet
+            "format-disconnected": "Disconnected",
             "tooltip-format": "{ifname}: {ipaddr}"
         },
 

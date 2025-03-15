@@ -2,7 +2,7 @@
   config = ''
       {
           "layer": "top", // Waybar at top layer
-          "position": "bottom", // Waybar position (top|bottom|left|right)
+          "position": "top", // Waybar position (top|bottom|left|right)
           "height": 32, // Waybar height
           // "width": 120, // Waybar width
           // Choose the order of the modules

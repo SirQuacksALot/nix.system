@@ -19,19 +19,17 @@
 
         "modules-left": [
             "custom/poweroff",
-            "hyprland/workspaces",
-            "tray"
+            "hyprland/workspaces"
         ],
         "modules-center": [
             "hyprland/window"
         ],
         "modules-right": [
-            "power-profiles-daemon"
+            "power-profiles-daemon",
             "pulseaudio",
             "network",
             "cpu",
             "memory",
-            // "temperature",
             "battery",
             "clock#date",
             "clock#time"
@@ -76,7 +74,7 @@
 
         "cpu": {
             "interval": 5,
-            "format": "   {usage}% ({load})", // Icon: microchip
+            "format": "   {usage}%", // Icon: microchip
             "states": {
             "warning": 70,
             "critical": 90
@@ -101,7 +99,7 @@
         },
 
         "hyprland/window": {
-            "format": "  {title}",
+            "format": "   {title}",
             "max-length": 120
         },
 
@@ -112,7 +110,7 @@
             "persistent_workspaces": {
                 "1": [],
                 "2": [],
-                "3": [],
+                "3": []
             },
             "format-icons": {
                 "1": "󰌢 ",
@@ -126,26 +124,23 @@
 
         "pulseaudio": {
             "scroll-step": 1,
-            "format": "{icon} {volume}%{format_source}",
-            "format-bluetooth": "{icon} {volume}%{format_source}",
-            "format-bluetooth-muted": "  {icon}{format_source}",
-            "format-muted": " {format_source}",
-            "format-source": "   {volume}%",
-            "format-source-muted": "  ",
+            "format": "{icon} {volume}%",
+            "format-bluetooth": "{icon} {volume}%",
+            "format-bluetooth-muted": "  {icon}",
             "format-icons": {
                 "headphone": " ",
                 "phone": " ",
                 "portable": " ",
                 "car": " ",
-                "default": ["", " ", " "]
+                "default": ["", "  ", "  "]
             },
             "on-click": "pavucontrol"
         },
 
         "custom/poweroff": {
             "tooltip": false,
-            "format": " ",
-            "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
+            "format": "  ",
+            "on-click": ""
         },
 
         "power-profiles-daemon": {
@@ -157,28 +152,22 @@
                 "performance": "",
                 "balanced": " ",
                 "power-saver": " "
-            },
+            }
         },
 
         "temperature": {
-        "critical-threshold": 80,
-        "interval": 5,
-        "format": "{icon}  {temperatureC}°C",
-        "format-icons": [
-            "", // Icon: temperature-empty
-            "", // Icon: temperature-quarter
-            "", // Icon: temperature-half
-            "", // Icon: temperature-three-quarters
-            ""  // Icon: temperature-full
-        ],
-        "tooltip": true
-        },
-
-        "tray": {
-            "icon-size": 21,
-            "spacing": 10
+            "critical-threshold": 80,
+            "interval": 5,
+            "format": "{icon}  {temperatureC}°C",
+            "format-icons": [
+                "", // Icon: temperature-empty
+                "", // Icon: temperature-quarter
+                "", // Icon: temperature-half
+                "", // Icon: temperature-three-quarters
+                ""  // Icon: temperature-full
+            ],
+            "tooltip": true
         }
-
     }
   '';
 
@@ -221,6 +210,11 @@
         min-height: 0;
         margin: 0;
         padding: 0;
+        color: #888888;
+    }
+
+    *:hover {
+        color: #fff;
     }
 
     /* The whole bar */
@@ -307,13 +301,6 @@
         animation-duration: 2s;
     }
 
-    #mode {
-        background: #64727D;
-        border-top: 2px solid white;
-        /* To compensate for the top border and still have vertical centering */
-        padding-bottom: 2px;
-    }
-
     #network {
         /* No styles */
     }
@@ -355,7 +342,7 @@
         /* To compensate for the top border and still have vertical centering */
         padding-bottom: 2px;
         padding-left: 10px;
-        padding-right: 10px;
+        padding-right: 6px;
         color: #888888;
     }
 

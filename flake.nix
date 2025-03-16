@@ -11,7 +11,7 @@
   };
 
   # Outputs to flake body
-  outputs = { self, nixpkgs, nixos-hardware, nixpkgsUnstable, ... }@inputs: 
+  outputs = { self, nixpkgs, nixos-hardware, nixpkgsUnstable, flake-utils, ... }@inputs: 
   
   let 
     # Base system defintion variables

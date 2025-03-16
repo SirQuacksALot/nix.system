@@ -6,6 +6,7 @@
     ./programs
     ./packages
     ./desktop
+    ./devShells
   ];
 
   # Define the system user

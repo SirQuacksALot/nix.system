@@ -64,6 +64,8 @@ in
         setopt appendhistory;
       '';
     };
+
+    programs.starship.enable = true;
     
   };
 }

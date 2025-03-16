@@ -62,6 +62,8 @@ in
         HISTSIZE=10000;
         SAVEHIST=10000;
         setopt appendhistory;
+
+        eval "$(starship init zsh)"
       '';
     };
 

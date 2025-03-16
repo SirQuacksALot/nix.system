@@ -36,6 +36,23 @@ clone the repoisitory via
 git clone https://github.com/SirQuacksALot/nix.system.git
 ```
 
+copy our hosts default config and chage owner
+
+```bash
+cd nix.system/hosts/<hostname>
+cp /etc/nixos/configuration.nix ./configuration.nix
+cp /etc/nixos/hardware-configuration.nix ./hardware-configuration.nix
+chown <yourusername>:users configuration.nix hardware-configuration.nix
+```
+
+change system to your liking (flake.nix variables)
+
+```nix
+system = "x86_64-linux";
+host = "<hostname>";
+username = "<yourusername>";
+```
+
 build your system with the flake of the repo (the host name can be set inside the flake)
 
 ```bash

@@ -26,10 +26,10 @@
         ],
         "modules-right": [
             "power-profiles-daemon",
-            "pulseaudio",
-            "group/network",
             "cpu",
             "memory",
+            "pulseaudio",
+            "group/network",
             "battery",
             "group/clock"
         ],

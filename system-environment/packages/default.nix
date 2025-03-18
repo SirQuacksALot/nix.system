@@ -29,10 +29,12 @@ in
     python314     # python programming language
     fastfetch     # cli system info fetcher
     # unstable.warp-terminal # currently bugged - wayland support does not work on this system dunno why ´\_(°.°)_/`
+    zoom-us       # video conference
 
     flutter
     androidSdk # The customized SDK that we've made above
     jdk17
+    android-tools
   ]) ++  
   [ 
     python-packages

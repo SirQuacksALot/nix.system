@@ -7,14 +7,6 @@ let
       pyquery   # needed for weather scripts
     ]
   );
-
-  buildToolsVersion = "34.0.0";
-  androidComposition = pkgs.androidenv.composeAndroidPackages {
-    buildToolsVersions = [ buildToolsVersion "28.0.3" ];
-    platformVersions = [ "34" "28" ];
-    abiVersions = [ "armeabi-v7a" "arm64-v8a" ];
-  };
-  androidSdk = androidComposition.androidsdk;
 in
 {
   environment.systemPackages = (with pkgs; [
@@ -30,14 +22,16 @@ in
     fastfetch     # cli system info fetcher
     # unstable.warp-terminal # currently bugged - wayland support does not work on this system dunno why ´\_(°.°)_/`
     zoom-us       # video conference
-
-    flutter
-    androidSdk # The customized SDK that we've made above
-    jdk17
-    android-tools
   ]) ++  
   [ 
     python-packages
+  ];
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+    php
   ];
 
   environment.sessionVariables.ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";

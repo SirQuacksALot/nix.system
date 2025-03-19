@@ -33,6 +33,4 @@ in
     # here, NOT in environment.systemPackages
     php
   ];
-
-  environment.sessionVariables.ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
 }

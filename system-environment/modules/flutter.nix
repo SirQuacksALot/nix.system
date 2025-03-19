@@ -61,11 +61,6 @@ in {
       GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${androidSdk}/libexec/android-sdk/build-tools/34.0.0/aapt2";
     };
 
-    nixpkgs.config = {
-      android_sdk.accept_license = true;
-      allowUnfree = true;
-    };
-
     environment.shellInit = ''
       export PATH=$PATH:${androidSdk}/libexec/android-sdk/platform-tools
       export PATH=$PATH:${androidSdk}/libexec/android-sdk/cmdline-tools/latest/bin

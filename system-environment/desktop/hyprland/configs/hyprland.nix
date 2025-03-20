@@ -55,8 +55,6 @@ in
     # exec-once = $terminal
     # exec-once = nm-applet &
     exec-once = waybar -c ${waybar_config} -s ${waybar_styles}
-    exec-once = swww init
-    exec-once = discord --start-minimized
 
 
     #############################
@@ -101,7 +99,7 @@ in
 
         # Change transparency of focused and unfocused windows
         active_opacity = 1.0
-        inactive_opacity = 0.95
+        inactive_opacity = 1.0
 
         shadow {
             enabled = true
@@ -112,7 +110,7 @@ in
 
         # https://wiki.hyprland.org/Configuring/Variables/#blur
         blur {
-            enabled = true
+            enabled = false
             size = 3
             passes = 1
 
@@ -122,7 +120,7 @@ in
 
     # https://wiki.hyprland.org/Configuring/Variables/#animations
     animations {
-        enabled = yes, please :)
+        enabled = true
 
         # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 

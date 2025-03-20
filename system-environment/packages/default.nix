@@ -22,6 +22,7 @@ in
     fastfetch     # cli system info fetcher
     # unstable.warp-terminal # currently bugged - wayland support does not work on this system dunno why ´\_(°.°)_/`
     zoom-us       # video conference
+    gradle
   ]) ++  
   [ 
     python-packages

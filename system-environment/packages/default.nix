@@ -24,6 +24,7 @@ in
     zoom-us       # video conference
     gradle
     act
+    eduvpn-client # HSMW vpn Client
   ]) ++  
   [ 
     python-packages

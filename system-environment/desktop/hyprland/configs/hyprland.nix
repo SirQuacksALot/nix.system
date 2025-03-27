@@ -55,6 +55,7 @@ in
     # exec-once = $terminal
     # exec-once = nm-applet &
     exec-once = waybar -c ${waybar_config} -s ${waybar_styles}
+    exec-once = swww init
 
 
     #############################

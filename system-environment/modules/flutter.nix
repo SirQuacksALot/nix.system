@@ -55,7 +55,7 @@ in {
       firebase-tools
 
       # additional tools - just there to keep flutter doctor happy
-      android-studio
+      # android-studio
       google-chrome
     ];
 

@@ -8,10 +8,11 @@
     nixos-hardware.url = "github:Nixos/nixos-hardware/master";
     zen-browser.url = "github:pneumaea/zen-browser-flake";
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
+    flutter-nix.url = "github:maximoffua/flutter.nix/3.19.0"; 
   };
 
   # Outputs to flake body
-  outputs = { self, nixpkgs, nixos-hardware, nixpkgsUnstable, flake-utils, ... }@inputs: 
+  outputs = { self, nixpkgs, nixos-hardware, nixpkgsUnstable, flake-utils, flutter-nix, ... }@inputs: 
   
   let 
     # Base system defintion variables
@@ -34,6 +35,7 @@
               inherit (final) config;
             };
           })
+          flutter-nix.overlays.default
         ];
       };
 

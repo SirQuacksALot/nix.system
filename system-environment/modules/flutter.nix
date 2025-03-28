@@ -51,9 +51,12 @@ in {
     environment.systemPackages = with pkgs; [
       flutter
       androidSdk
-      # android-studio
       jdk17
       firebase-tools
+
+      # additional tools - just there to keep flutter doctor happy
+      android-studio
+      google-chrome
     ];
 
     environment.variables = {

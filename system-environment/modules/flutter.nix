@@ -64,7 +64,7 @@ in {
       ANDROID_HOME = "${androidSdk}/libexec/android-sdk";
       JAVA_HOME = "${pkgs.jdk17}";
       GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${androidSdk}/libexec/android-sdk/build-tools/34.0.0/aapt2";
-      CHROME_EXECUTABLE = "google-chrome-stable;"
+      CHROME_EXECUTABLE = "google-chrome-stable";
     };
 
     environment.shellInit = ''

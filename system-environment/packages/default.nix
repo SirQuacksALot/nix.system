@@ -9,6 +9,7 @@ let
   );
 in
 {
+  programs.nix-ld.enable = true;
   environment.systemPackages = (with pkgs; [
     clang         # build tools
     curl          # transfaring files with url 

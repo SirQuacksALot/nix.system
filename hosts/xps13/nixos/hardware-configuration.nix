@@ -25,6 +25,13 @@
     };
 
   swapDevices = [ ];
+  
+  boot.kernel.sysctl = { "vm.swappiness" = 100; };
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 30;
+  };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

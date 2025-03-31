@@ -10,6 +10,6 @@
     ./touchpad
     ./remote
     ./garbage-collection
-    ./upower
+    ./power
   ];
 }

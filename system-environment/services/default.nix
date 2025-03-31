@@ -11,5 +11,6 @@
     ./remote
     ./garbage-collection
     ./power
+    ./vpn
   ];
 }

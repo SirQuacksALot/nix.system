@@ -294,12 +294,15 @@ in
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
     # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
 
-    # Example windowrule v1
+    # Kitty Window Rules
     windowrule = float, ^(kitty)$
-
-    # Example windowrule v2
     windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
     windowrulev2 = size 800 400,class:^(kitty)$,title:^(kitty)$
+
+    # Window Rules for eduVpn gui - *currently not working*
+    windowrule = float, ^(eduVPN)$
+    windowrulev2 = float,class:^(eduVPN)$,title:^(eduVPN)$
+    windowrulev2 = size 800 400,class:^(eduVPN)$,title:^(eduVPN)$
 
     # Ignore maximize requests from apps. You'll probably like this.
     windowrulev2 = suppressevent maximize, class:.*

@@ -289,7 +289,7 @@ in
     bindl = , XF86AudioPrev, exec, playerctl previous
 
     # Clipse binds
-    bind = SUPER, V, exec, alacritty --class clipse -e clipse
+    bind = $mainMod SHIFT, C, exec, kitty --class clipse -e clipse
 
     ##############################
     ### WINDOWS AND WORKSPACES ###

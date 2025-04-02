@@ -41,6 +41,7 @@
     swappy                            # snapshot toolf for wayland
     wallust                           # color generator form image
     wl-clipboard                      # command line copy and paste utils for wayland
+    clipse
     wlogout                           # logout menu for wayland
     xarchiver                         # gtk forntend for zip, tar, ...
     yad                               # gui dialog for shell scrips

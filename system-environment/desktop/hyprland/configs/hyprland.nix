@@ -56,6 +56,7 @@ in
     # exec-once = nm-applet &
     exec-once = waybar -c ${waybar_config} -s ${waybar_styles}
     exec-once = swww init
+    exec-once = clipse -listen
 
 
     #############################
@@ -287,6 +288,9 @@ in
     bindl = , XF86AudioPlay, exec, playerctl play-pause
     bindl = , XF86AudioPrev, exec, playerctl previous
 
+    # Clipse binds
+    bind = SUPER, V, exec, alacritty --class clipse -e clipse
+
     ##############################
     ### WINDOWS AND WORKSPACES ###
     ##############################
@@ -303,6 +307,11 @@ in
     windowrule = float, ^(eduVPN)$
     windowrulev2 = float,class:^(eduVPN)$,title:^(eduVPN)$
     windowrulev2 = size 800 400,class:^(eduVPN)$,title:^(eduVPN)$
+
+    # clipse window rules
+    windowrule = float, class:(clipse)
+    windowrule = size 622 652, class:(clipse)
+    windowrule = stayfocused, class:(clipse)
 
     # Ignore maximize requests from apps. You'll probably like this.
     windowrulev2 = suppressevent maximize, class:.*

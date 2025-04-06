@@ -305,13 +305,15 @@ in
 
     # Window Rules for eduVpn gui - *currently not working*
     windowrule = float, ^(eduVPN)$
-    windowrulev2 = float,class:^(eduVPN)$,title:^(eduVPN)$
-    windowrulev2 = size 800 400,class:^(eduVPN)$,title:^(eduVPN)$
+    windowrulev2 = float, title:^(eduVPN)$
+    windowrulev2 = size 800 400, title:^(eduVPN)$
 
     # clipse window rules
+    windowrule = float, ^(clipse)$
     windowrule = float, class:(clipse)
     windowrule = size 622 652, class:(clipse)
     windowrule = stayfocused, class:(clipse)
+    windowrulev2 = float,class:^(clipse)$,title:^(clipse)$
 
     # Ignore maximize requests from apps. You'll probably like this.
     windowrulev2 = suppressevent maximize, class:.*

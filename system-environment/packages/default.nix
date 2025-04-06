@@ -28,6 +28,7 @@ in
     eduvpn-client   # HSMW vpn Client
     php
     libreoffice     # Office suite - for now
+    unzip
   ]) ++  
   [ 
     python-packages

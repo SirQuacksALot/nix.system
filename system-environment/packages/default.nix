@@ -27,6 +27,7 @@ in
     act
     eduvpn-client   # HSMW vpn Client
     php
+    libreoffice     # Office suite - for now
   ]) ++  
   [ 
     python-packages

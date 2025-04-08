@@ -12,5 +12,6 @@
     ./garbage-collection
     ./power
     ./vpn
+    ./autorandr
   ];
 }

@@ -5,6 +5,7 @@ let
     ps: with ps; [
       requests
       pyquery   # needed for weather scripts
+      discord
     ]
   );
 in

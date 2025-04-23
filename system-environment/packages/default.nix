@@ -20,7 +20,6 @@ in
     openssl         # cryptographic library
     pciutils        # pci inspection and manipulation
     wget            # retrive files via https, http and ftp
-    python314       # python
     fastfetch       # cli system info fetcher
     zoom-us         # video conference
     teams-for-linux # teams

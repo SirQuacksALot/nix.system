@@ -8,7 +8,7 @@
 
 [![Nix](https://img.shields.io/badge/NixOs-24.11-809fdf.svg?logo=NixOS&logoColor=809fdf&style=flat-square)](https://nixos.org/) [![Nix](https://img.shields.io/badge/Nix_Flakes-Check-809fdf.svg?logo=NixOS&logoColor=809fdf&style=flat-square)](https://nixos.org/) [![Hyprland Badge](https://img.shields.io/badge/Hyprland-stable-809fdf?logo=hyprland&logoColor=809fdf&style=flat-square)](https://hyprland.org/)
 
-[![LatestCommits](https://img.shields.io/github/last-commit/SirQuacksALot/nix.dotfiles?color=809fdf&logo=github&logoColor=809fdf&style=flat-square)](https://github.com/SirQuacksALot/nix.dotfiles/activity) [![RepoSize](https://img.shields.io/github/repo-size/SirQuacksALot/nix.dotfiles?color=809fdf&logo=github&logoColor=809fdf&style=flat-square)](https://github.com/SirQuacksALot/nix.dotfiles)
+[![LatestCommits](https://img.shields.io/github/last-commit/SirQuacksALot/nix.dotfiles?color=809fdf&logo=github&logoColor=809fdf&style=flat-square)](https://github.com/SirQuacksALot/nix.system/activity) [![RepoSize](https://img.shields.io/github/repo-size/SirQuacksALot/nix.system?color=809fdf&logo=github&logoColor=809fdf&style=flat-square)](https://github.com/SirQuacksALot/nix.dotfiles)
 
 <br>
 
